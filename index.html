@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Vahinisaheb</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #160705;
+            color: white;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+
+            position: relative;
+
+            width: 100%;
+            height: 100vh;
+
+            min-height: 650px;
+
+            overflow: hidden;
+
+            background-image:
+
+                linear-gradient(
+                    90deg,
+                    rgba(18, 5, 2, 0.92) 0%,
+                    rgba(25, 7, 3, 0.72) 30%,
+                    rgba(25, 7, 3, 0.28) 55%,
+                    rgba(15, 4, 2, 0.05) 100%
+                ),
+
+                url("./background.png");
+
+            background-size: cover;
+
+            background-position: center center;
+
+            background-repeat: no-repeat;
+        }
+
+
+        /* Bottom shadow */
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            height: 25%;
+
+            background: linear-gradient(
+                transparent,
+                rgba(8, 2, 1, 0.85)
+            );
+
+            pointer-events: none;
+        }
+
+
+        /* ==============================
+           NAVBAR
+        ============================== */
+
+        .navbar {
+
+            position: relative;
+
+            z-index: 10;
+
+            width: 90%;
+
+            max-width: 1150px;
+
+            height: 85px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom: 1px solid rgba(255,255,255,0.18);
+        }
+
+
+        /* ==============================
+           LOGO
+        ============================== */
+
+        .logo-wrapper {
+
+            width: 155px;
+
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+
+        .logo {
+
+            width: 155px;
+
+            height: 155px;
+
+            object-fit: contain;
+
+            display: block;
+
+            transform: scale(1.08);
+
+            /* Hide white background */
+
+            mix-blend-mode: multiply;
+
+            filter:
+                drop-shadow(0 3px 5px rgba(0,0,0,0.8));
+        }
+
+
+        /* ==============================
+           NAV LINKS
+        ============================== */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: #f1c04f;
+        }
+
+
+        /* Active home */
+
+        .nav-links a:first-child::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            bottom: -10px;
+
+            height: 1px;
+
+            background: #edbd4e;
+        }
+
+
+        /* ==============================
+           BOOK TABLE
+        ============================== */
+
+        .book-table {
+
+            background: #edbd4e;
+
+            color: #241006 !important;
+
+            padding: 11px 19px;
+
+            border-radius: 5px;
+
+            font-weight: 700 !important;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.4);
+        }
+
+
+        .book-table:hover {
+
+            background: #ffd66d;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           HERO CONTENT
+        ============================== */
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 90%;
+
+            max-width: 1150px;
+
+            height: calc(100vh - 85px);
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .content {
+
+            width: 500px;
+
+            margin-top: -15px;
+        }
+
+
+        /* ==============================
+           SMALL TITLE
+        ============================== */
+
+        .small-title {
+
+            color: #e9bb4d;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* ==============================
+           MARATHI TITLE
+        ============================== */
+
+        .main-title {
+
+            font-family: "Noto Serif Devanagari", serif;
+
+            color: #f3c452;
+
+            font-size: 45px;
+
+            font-weight: 700;
+
+            line-height: 1.2;
+
+            text-shadow:
+                0 3px 8px rgba(0,0,0,0.8);
+
+            margin-bottom: 10px;
+        }
+
+
+        /* ==============================
+           RESTAURANT TYPE
+        ============================== */
+
+        .restaurant-type {
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            color: white;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* ==============================
+           LOCATION
+        ============================== */
+
+        .location {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            color: #eeeeee;
+
+            font-size: 12px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .location-icon {
+
+            color: #efc257;
+
+            font-size: 15px;
+        }
+
+
+        /* ==============================
+           BUTTONS
+        ============================== */
+
+        .buttons {
+
+            display: flex;
+
+            gap: 10px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .btn {
+
+            height: 33px;
+
+            padding: 0 19px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+
+        .primary {
+
+            background: #edbd4e;
+
+            color: #241006;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.4);
+        }
+
+
+        .primary:hover {
+
+            background: #ffd56a;
+
+            transform: translateY(-2px);
+        }
+
+
+        .secondary {
+
+            background: rgba(0,0,0,0.3);
+
+            border: 1px solid rgba(255,255,255,0.55);
+
+            color: white;
+        }
+
+
+        .secondary:hover {
+
+            color: #edbd4e;
+
+            border-color: #edbd4e;
+        }
+
+
+        /* ==============================
+           FEATURES
+        ============================== */
+
+        .features {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        .feature {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #eee;
+
+            font-size: 8px;
+
+            line-height: 1.3;
+
+            white-space: nowrap;
+        }
+
+
+        .feature-icon {
+
+            width: 27px;
+
+            height: 27px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            border: 1px solid #d8ad43;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: #efc35a;
+
+            font-size: 12px;
+
+            background: rgba(80,30,5,0.3);
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        .hamburger {
+
+            display: none;
+
+            font-size: 25px;
+
+            color: #efc35a;
+        }
+
+
+        @media(max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-content {
+                align-items: flex-end;
+                padding-bottom: 50px;
+            }
+
+        }
+
+
+        @media(max-width: 600px) {
+
+            .navbar {
+                width: 88%;
+            }
+
+            .hero-content {
+                width: 88%;
+            }
+
+            .main-title {
+                font-size: 34px;
+            }
+
+            .features {
+
+                display: grid;
+
+                grid-template-columns: 1fr 1fr;
+
+                gap: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<section class="hero">
+
+
+    <!-- ============================
+         NAVBAR
+    ============================= -->
+
+    <header class="navbar">
+
+
+        <div class="logo-wrapper">
+
+            <img
+                src="./logo.jpeg"
+                alt="Hotel Vahinisaheb"
+                class="logo"
+            >
+
+        </div>
+
+
+        <nav class="nav-links">
+
+            <a href="#">Home</a>
+
+            <a href="#">About</a>
+
+            <a href="#">Menu</a>
+
+            <a href="#">Gallery</a>
+
+            <a href="#">Reviews</a>
+
+            <a href="#">Contact</a>
+
+            <a href="#" class="book-table">
+                Book Table
+            </a>
+
+        </nav>
+
+
+        <div class="hamburger">
+            ☰
+        </div>
+
+
+    </header>
+
+
+    <!-- ============================
+         HERO CONTENT
+    ============================= -->
+
+    <main class="hero-content">
+
+
+        <div class="content">
+
+
+            <div class="small-title">
+                Authentic Maharashtrian Dining
+            </div>
+
+
+            <h1 class="main-title">
+
+                महाराष्ट्रीयन<br>
+
+                चवीचा खरा आस्वाद
+
+            </h1>
+
+
+            <div class="restaurant-type">
+
+                Veg&nbsp;&nbsp; | &nbsp;&nbsp;Non-Veg
+                &nbsp;&nbsp; | &nbsp;&nbsp;Family Restaurant
+
+            </div>
+
+
+            <div class="location">
+
+                <span class="location-icon">
+                    📍
+                </span>
+
+                <span>
+                    शिक्रापूर, पुणे
+                </span>
+
+            </div>
+
+
+            <div class="buttons">
+
+                <a href="#" class="btn primary">
+                    View Menu
+                </a>
+
+                <a href="#" class="btn secondary">
+                    Order Now
+                </a>
+
+            </div>
+
+
+            <div class="features">
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ✋
+                    </div>
+
+                    <span>
+                        Authentic<br>
+                        Maharashtrian Taste
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🏠
+                    </div>
+
+                    <span>
+                        Fresh<br>
+                        Ingredients
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ◉
+                    </div>
+
+                    <span>
+                        Family<br>
+                        Friendly
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ♨
+                    </div>
+
+                    <span>
+                        Hygienic &<br>
+                        Clean
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+</section>
+
+
+</body>
+
+</html>
