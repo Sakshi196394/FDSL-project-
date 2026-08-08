@@ -1,749 +1,2409 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hotel Vahinisaheb</title>
+    <title>Hotel Vahinisaheb | Authentic Maharashtrian Cuisine</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap"
-          rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
+
+        /* =========================
+           GLOBAL
+        ========================= */
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
-        html,
+        :root {
+            --gold: #c89b3c;
+            --gold-light: #f2c866;
+            --saffron: #d97706;
+            --dark: #0d0d0d;
+            --brown: #3a1f0b;
+            --cream: #f8f4ec;
+            --white: #ffffff;
+            --muted: #d4c8b5;
+        }
+
         body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: var(--gold);
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(30px, 4vw, 48px);
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: 15px auto 0;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 100%;
+            z-index: 1000;
+
+            background: rgba(8, 5, 4, 0.88);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(200,155,60,0.25);
         }
 
-        body {
-            font-family: "DM Sans", sans-serif;
-            background: #160705;
-            color: white;
+        .navbar {
+            height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
         }
 
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-        /* ==============================
-           HERO
-        ============================== */
+        .brand img {
+            width: 58px;
+            height: 58px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+        }
 
-        .hero {
+        .brand-text h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            font-size: 17px;
+        }
 
+        .brand-text p {
+            font-size: 9px;
+            color: #ddd;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            color: #eee;
             position: relative;
+            transition: .3s;
+        }
 
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -7px;
+            left: 50%;
+            background: var(--gold);
+            transition: .3s;
+        }
+
+        .nav-links a:hover::after {
             width: 100%;
-            height: 100vh;
+            left: 0;
+        }
 
-            min-height: 650px;
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: var(--gold-light);
+        }
 
-            overflow: hidden;
+        /* =========================
+           HERO
+        ========================= */
 
+        #home {
+            min-height: 100vh;
+
+            /*
+             IMPORTANT:
+             YOUR ORIGINAL BACKGROUND IS NOT CHANGED.
+            */
             background-image:
-
                 linear-gradient(
                     90deg,
-                    rgba(18, 5, 2, 0.92) 0%,
-                    rgba(25, 7, 3, 0.72) 30%,
-                    rgba(25, 7, 3, 0.28) 55%,
-                    rgba(15, 4, 2, 0.05) 100%
+                    rgba(0,0,0,.25),
+                    rgba(0,0,0,.05)
                 ),
-
                 url("./background.png");
 
             background-size: cover;
-
-            background-position: center center;
-
+            background-position: center;
             background-repeat: no-repeat;
-        }
-
-
-        /* Bottom shadow */
-
-        .hero::after {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-            right: 0;
-            bottom: 0;
-
-            height: 25%;
-
-            background: linear-gradient(
-                transparent,
-                rgba(8, 2, 1, 0.85)
-            );
-
-            pointer-events: none;
-        }
-
-
-        /* ==============================
-           NAVBAR
-        ============================== */
-
-        .navbar {
-
-            position: relative;
-
-            z-index: 10;
-
-            width: 90%;
-
-            max-width: 1150px;
-
-            height: 85px;
-
-            margin: auto;
 
             display: flex;
-
             align-items: center;
-
-            justify-content: space-between;
-
-            border-bottom: 1px solid rgba(255,255,255,0.18);
+            padding: 120px 7% 70px;
         }
-
-
-        /* ==============================
-           LOGO
-        ============================== */
-
-        .logo-wrapper {
-
-            width: 155px;
-
-            height: 75px;
-
-            display: flex;
-
-            align-items: center;
-
-            overflow: hidden;
-        }
-
-
-        .logo {
-
-            width: 155px;
-
-            height: 155px;
-
-            object-fit: contain;
-
-            display: block;
-
-            transform: scale(1.08);
-
-            /* Hide white background */
-
-            mix-blend-mode: multiply;
-
-            filter:
-                drop-shadow(0 3px 5px rgba(0,0,0,0.8));
-        }
-
-
-        /* ==============================
-           NAV LINKS
-        ============================== */
-
-        .nav-links {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 30px;
-        }
-
-
-        .nav-links a {
-
-            position: relative;
-
-            color: white;
-
-            text-decoration: none;
-
-            font-size: 11px;
-
-            font-weight: 500;
-
-            transition: 0.3s;
-        }
-
-
-        .nav-links a:hover {
-
-            color: #f1c04f;
-        }
-
-
-        /* Active home */
-
-        .nav-links a:first-child::after {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-
-            right: 0;
-
-            bottom: -10px;
-
-            height: 1px;
-
-            background: #edbd4e;
-        }
-
-
-        /* ==============================
-           BOOK TABLE
-        ============================== */
-
-        .book-table {
-
-            background: #edbd4e;
-
-            color: #241006 !important;
-
-            padding: 11px 19px;
-
-            border-radius: 5px;
-
-            font-weight: 700 !important;
-
-            box-shadow:
-                0 4px 12px rgba(0,0,0,0.4);
-        }
-
-
-        .book-table:hover {
-
-            background: #ffd66d;
-
-            transform: translateY(-2px);
-        }
-
-
-        /* ==============================
-           HERO CONTENT
-        ============================== */
 
         .hero-content {
+            max-width: 620px;
+        }
 
-            position: relative;
+        .hero-logo {
+            width: 145px;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            margin-bottom: 25px;
+            box-shadow: 0 0 35px rgba(200,155,60,.25);
+        }
 
-            z-index: 5;
+        .hero-content h1 {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.1;
+            color: #ffd66d;
+            text-shadow: 2px 4px 15px #000;
+        }
 
-            width: 90%;
+        .hero-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(25px, 3vw, 40px);
+            margin: 12px 0;
+            color: #fff;
+        }
 
-            max-width: 1150px;
+        .hero-content p {
+            color: #eee;
+            line-height: 1.8;
+            max-width: 550px;
+        }
 
-            height: calc(100vh - 85px);
-
-            margin: auto;
-
+        .hero-buttons {
             display: flex;
-
-            align-items: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
 
-
-        .content {
-
-            width: 500px;
-
-            margin-top: -15px;
-        }
-
-
-        /* ==============================
-           SMALL TITLE
-        ============================== */
-
-        .small-title {
-
-            color: #e9bb4d;
-
-            font-size: 11px;
-
+        .primary-btn,
+        .secondary-btn {
+            padding: 13px 25px;
+            border-radius: 7px;
             font-weight: 600;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 10px;
+            border: none;
+            transition: .3s;
         }
 
-
-        /* ==============================
-           MARATHI TITLE
-        ============================== */
-
-        .main-title {
-
-            font-family: "Noto Serif Devanagari", serif;
-
-            color: #f3c452;
-
-            font-size: 45px;
-
-            font-weight: 700;
-
-            line-height: 1.2;
-
-            text-shadow:
-                0 3px 8px rgba(0,0,0,0.8);
-
-            margin-bottom: 10px;
+        .primary-btn {
+            background: linear-gradient(135deg, #f5c85d, #c89228);
+            color: #241405;
         }
 
-
-        /* ==============================
-           RESTAURANT TYPE
-        ============================== */
-
-        .restaurant-type {
-
-            font-size: 13px;
-
-            font-weight: 500;
-
+        .secondary-btn {
+            background: rgba(0,0,0,.55);
             color: white;
+            border: 1px solid rgba(255,255,255,.5);
+        }
 
+        .primary-btn:hover,
+        .secondary-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           FEATURE STRIP
+        ========================= */
+
+        .feature-strip {
+            background: rgba(20,12,7,.96);
+            border-top: 1px solid rgba(200,155,60,.2);
+            border-bottom: 1px solid rgba(200,155,60,.2);
+
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            padding: 25px 7%;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 10px;
+            border-right: 1px solid rgba(255,255,255,.1);
+        }
+
+        .feature:last-child {
+            border: none;
+        }
+
+        .feature .icon {
+            font-size: 25px;
             margin-bottom: 8px;
         }
 
-
-        /* ==============================
-           LOCATION
-        ============================== */
-
-        .location {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 5px;
-
-            color: #eeeeee;
-
-            font-size: 12px;
-
-            margin-bottom: 22px;
+        .feature h4 {
+            color: var(--gold-light);
+            font-size: 14px;
         }
 
-
-        .location-icon {
-
-            color: #efc257;
-
-            font-size: 15px;
+        .feature p {
+            font-size: 11px;
+            color: #aaa;
+            margin-top: 4px;
         }
 
+        /* =========================
+           MENU
+        ========================= */
 
-        /* ==============================
-           BUTTONS
-        ============================== */
+        #menu {
+            background: linear-gradient(180deg,#100b08,#1b0e06);
+        }
 
-        .buttons {
-
+        .menu-filters {
             display: flex;
-
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 10px;
-
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
-
-        .btn {
-
-            height: 33px;
-
-            padding: 0 19px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            border-radius: 6px;
-
-            text-decoration: none;
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
+        .menu-search {
+            max-width: 520px;
+            margin: -10px auto 30px;
+            position: relative;
         }
 
-
-        .primary {
-
-            background: #edbd4e;
-
-            color: #241006;
-
-            box-shadow:
-                0 4px 12px rgba(0,0,0,0.4);
+        .menu-search input {
+            width: 100%;
+            padding: 15px 20px 15px 48px;
+            border-radius: 40px;
+            border: 1px solid rgba(200,155,60,.35);
+            background: rgba(255,255,255,.05);
+            color: #fff;
+            outline: none;
+            font-family: inherit;
         }
 
-
-        .primary:hover {
-
-            background: #ffd56a;
-
-            transform: translateY(-2px);
+        .menu-search input:focus {
+            border-color: var(--gold-light);
+            box-shadow: 0 0 0 4px rgba(200,155,60,.08);
         }
 
-
-        .secondary {
-
-            background: rgba(0,0,0,0.3);
-
-            border: 1px solid rgba(255,255,255,0.55);
-
-            color: white;
+        .menu-search::before {
+            content: "⌕";
+            position: absolute;
+            left: 19px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold-light);
+            font-size: 22px;
         }
 
-
-        .secondary:hover {
-
-            color: #edbd4e;
-
-            border-color: #edbd4e;
-        }
-
-
-        /* ==============================
-           FEATURES
-        ============================== */
-
-        .features {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 30px;
-        }
-
-
-        .feature {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 7px;
-
-            color: #eee;
-
-            font-size: 8px;
-
-            line-height: 1.3;
-
-            white-space: nowrap;
-        }
-
-
-        .feature-icon {
-
-            width: 27px;
-
-            height: 27px;
-
-            flex-shrink: 0;
-
-            border-radius: 50%;
-
-            border: 1px solid #d8ad43;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            color: #efc35a;
-
-            font-size: 12px;
-
-            background: rgba(80,30,5,0.3);
-        }
-
-
-        /* ==============================
-           MOBILE
-        ============================== */
-
-        .hamburger {
-
+        .no-results {
             display: none;
-
-            font-size: 25px;
-
-            color: #efc35a;
+            text-align: center;
+            color: var(--muted);
+            padding: 35px;
         }
 
+        .filter-btn {
+            padding: 9px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(200,155,60,.4);
+            background: transparent;
+            color: #ddd;
+            transition: .3s;
+        }
 
-        @media(max-width: 900px) {
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gold);
+            color: #211306;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .food-card {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(200,155,60,.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: .35s;
+            position: relative;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 35px rgba(0,0,0,.4);
+        }
+
+        .food-img {
+            height: 210px;
+            background: linear-gradient(135deg,#5d2a0c,#1b0d05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+        }
+
+        .food-info {
+            padding: 20px;
+        }
+
+        .food-info h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 19px;
+            color: var(--gold-light);
+        }
+
+        .food-info p {
+            color: #aaa;
+            font-size: 13px;
+            margin: 8px 0 15px;
+            line-height: 1.6;
+        }
+
+        .food-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            color: white;
+            font-weight: 600;
+        }
+
+        .badge {
+            font-size: 9px;
+            padding: 5px 9px;
+            border-radius: 20px;
+            background: rgba(217,119,6,.2);
+            color: #ffc765;
+        }
+
+        /* =========================
+           BUILD YOUR MEAL
+        ========================= */
+
+        #meal {
+            background: #0d0d0d;
+        }
+
+        .meal-box {
+            max-width: 950px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 20px;
+            background: linear-gradient(145deg,#201208,#0e0b09);
+            border: 1px solid rgba(200,155,60,.35);
+        }
+
+        .meal-options {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 25px;
+        }
+
+        .meal-group label {
+            display: block;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .meal-group select {
+            width: 100%;
+            padding: 13px;
+            background: #17110d;
+            border: 1px solid rgba(200,155,60,.3);
+            color: white;
+            border-radius: 8px;
+        }
+
+        .meal-result {
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 12px;
+            background: rgba(200,155,60,.08);
+            border: 1px solid rgba(200,155,60,.25);
+        }
+
+        .meal-total {
+            font-size: 25px;
+            color: var(--gold-light);
+            margin-top: 10px;
+        }
+
+        /* =========================
+           AI RECOMMENDATION
+        ========================= */
+
+        #ai {
+            background: linear-gradient(135deg,#211107,#0d0d0d);
+        }
+
+        .ai-box {
+            max-width: 850px;
+            margin: auto;
+            padding: 45px;
+            border-radius: 20px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(200,155,60,.3);
+            text-align: center;
+        }
+
+        .ai-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .ai-options {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .ai-options select {
+            padding: 13px;
+            background: #15100c;
+            color: white;
+            border: 1px solid #634a25;
+            border-radius: 8px;
+        }
+
+        #recommendation {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(200,155,60,.1);
+            color: #ffe39a;
+        }
+
+        /* =========================
+           SIGNATURE DISHES
+        ========================= */
+
+        #signature {
+            background: #120b07;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .signature-card {
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 18px;
+            background: linear-gradient(145deg,#3a1f0b,#160c06);
+            border: 1px solid rgba(200,155,60,.25);
+        }
+
+        .signature-card .dish-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .signature-card h3 {
+            color: var(--gold-light);
+            font-family: 'Cinzel',serif;
+        }
+
+        .signature-card p {
+            color: #aaa;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        #about {
+            background: #0d0d0d;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-card {
+            padding: 40px;
+            background: linear-gradient(145deg,#2b1608,#100b08);
+            border: 1px solid rgba(200,155,60,.25);
+            border-radius: 20px;
+        }
+
+        .about-card h3 {
+            font-family: 'Cinzel',serif;
+            color: var(--gold-light);
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .about-card p {
+            color: #bbb;
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+
+        .story-highlight {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .story-item {
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(200,155,60,.08);
+            text-align: center;
+        }
+
+        .story-item strong {
+            display: block;
+            font-size: 25px;
+            color: var(--gold-light);
+        }
+
+        .story-item span {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        #gallery {
+            background: #120b07;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 220px;
+            border-radius: 12px;
+            background: linear-gradient(135deg,#4c240b,#120904);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            border: 1px solid rgba(200,155,60,.15);
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            border-color: var(--gold);
+        }
+
+        /* =========================
+           VIDEO
+        ========================= */
+
+        .video-box {
+            max-width: 1000px;
+            height: 430px;
+            margin: auto;
+            border-radius: 20px;
+            background: linear-gradient(135deg,#3a1b09,#090605);
+            border: 1px solid rgba(200,155,60,.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-light);
+            background: rgba(200,155,60,.15);
+            color: var(--gold-light);
+            font-size: 30px;
+        }
+
+        /* =========================
+           REVIEWS
+        ========================= */
+
+        #reviews {
+            background: #0d0d0d;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 25px;
+        }
+
+        .review-card {
+            padding: 30px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(200,155,60,.2);
+            border-radius: 15px;
+        }
+
+        .stars {
+            color: #ffc857;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .review-card p {
+            color: #bbb;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .review-card h4 {
+            margin-top: 20px;
+            color: var(--gold-light);
+        }
+
+        /* =========================
+           STATISTICS
+        ========================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            background: #211107;
+            border-top: 1px solid rgba(200,155,60,.2);
+            border-bottom: 1px solid rgba(200,155,60,.2);
+        }
+
+        .stat {
+            text-align: center;
+            padding: 50px 15px;
+            border-right: 1px solid rgba(255,255,255,.1);
+        }
+
+        .stat:last-child {
+            border: none;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 42px;
+            color: var(--gold-light);
+            font-family: 'Cinzel',serif;
+        }
+
+        .stat span {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        #contact {
+            background: linear-gradient(135deg,#211107,#0d0d0d);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .contact-card {
+            padding: 35px;
+            border-radius: 15px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(200,155,60,.2);
+        }
+
+        .contact-card h3 {
+            color: var(--gold-light);
+            font-family: 'Cinzel',serif;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            color: #ccc;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 13px;
+            background: #15100c;
+            border: 1px solid #533d21;
+            border-radius: 7px;
+            color: white;
+            outline: none;
+        }
+
+        .feedback-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* =========================
+           MAP + ADMIN PREVIEW
+        ========================= */
+
+        .map-card {
+            margin-top: 35px;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 1px solid rgba(200,155,60,.25);
+            background: #120b07;
+        }
+
+        .map-card iframe {
+            width: 100%;
+            height: 360px;
+            border: 0;
+            display: block;
+        }
+
+        .admin-preview {
+            background: linear-gradient(135deg,#100a06,#241308);
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 18px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .admin-card {
+            padding: 24px;
+            border-radius: 16px;
+            background: rgba(255,255,255,.045);
+            border: 1px solid rgba(200,155,60,.2);
+        }
+
+        .admin-card span { color: #aaa; font-size: 12px; }
+
+        .admin-card strong {
+            display: block;
+            margin-top: 8px;
+            color: var(--gold-light);
+            font-family: 'Cinzel',serif;
+            font-size: 27px;
+        }
+
+        .admin-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 28px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #080604;
+            padding: 55px 7% 25px;
+            border-top: 1px solid rgba(200,155,60,.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        footer h3 {
+            font-family: 'Cinzel',serif;
+            color: var(--gold-light);
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #999;
+            font-size: 13px;
+            line-height: 2;
+            display: block;
+        }
+
+        footer a:hover {
+            color: var(--gold-light);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.08);
+            color: #777;
+            font-size: 12px;
+        }
+
+        /* =========================
+           FLOATING CONTACT
+        ========================= */
+
+        .floating-contact {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 900;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .float-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #201208;
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.4);
+        }
+
+        /* =========================
+           DARK/LIGHT MODE
+        ========================= */
+
+        body.light-mode {
+            background: #f5eee3;
+            color: #211306;
+        }
+
+        body.light-mode section,
+        body.light-mode #menu,
+        body.light-mode #about,
+        body.light-mode #reviews,
+        body.light-mode #gallery,
+        body.light-mode #meal {
+            background: #f5eee3;
+            color: #211306;
+        }
+
+        body.light-mode .section-title p,
+        body.light-mode .about-card p,
+        body.light-mode .review-card p {
+            color: #5d5041;
+        }
+
+        .theme-btn {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            background: #211107;
+            color: var(--gold-light);
+            z-index: 1000;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 1100px) {
 
             .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .hero-content {
-                align-items: flex-end;
-                padding-bottom: 50px;
-            }
-
-        }
-
-
-        @media(max-width: 600px) {
-
-            .navbar {
-                width: 88%;
-            }
-
-            .hero-content {
-                width: 88%;
-            }
-
-            .main-title {
-                font-size: 34px;
-            }
-
-            .features {
-
-                display: grid;
-
-                grid-template-columns: 1fr 1fr;
-
                 gap: 15px;
             }
 
+            .menu-grid,
+            .signature-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .admin-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media(max-width: 850px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 82px;
+                left: 0;
+                width: 100%;
+                background: #0d0906;
+                display: none;
+                flex-direction: column;
+                padding: 25px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .feature-strip,
+            .stats {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .meal-options,
+            .ai-options {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .hero-logo {
+                width: 110px;
+                height: 110px;
+            }
+
+            .menu-grid,
+            .signature-grid,
+            .gallery-grid,
+            .feature-strip,
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .feature {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,.1);
+            }
+
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .meal-box,
+            .ai-box {
+                padding: 25px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brand-text {
+                display: none;
+            }
         }
 
     </style>
-
 </head>
 
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
 
-<section class="hero">
+<header>
 
+    <nav class="navbar">
 
-    <!-- ============================
-         NAVBAR
-    ============================= -->
+        <a href="#home" class="brand">
 
-    <header class="navbar">
+            <img src="./logo.jpeg" alt="Hotel Vahinisaheb">
 
+            <div class="brand-text">
+                <h3>Hotel Vahinisaheb</h3>
+                <p>Authentic Maharashtrian Taste</p>
+            </div>
 
-        <div class="logo-wrapper">
-
-            <img
-                src="./logo.jpeg"
-                alt="Hotel Vahinisaheb"
-                class="logo"
-            >
-
-        </div>
+        </a>
 
 
-        <nav class="nav-links">
-
-            <a href="#">Home</a>
-
-            <a href="#">About</a>
-
-            <a href="#">Menu</a>
-
-            <a href="#">Gallery</a>
-
-            <a href="#">Reviews</a>
-
-            <a href="#">Contact</a>
-
-            <a href="#" class="book-table">
-                Book Table
-            </a>
-
-        </nav>
-
-
-        <div class="hamburger">
+        <div class="menu-toggle" onclick="toggleMenu()">
             ☰
         </div>
 
 
-    </header>
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#meal">Build Your Meal</a></li>
+            <li><a href="#ai">AI Recommendation</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
 
 
-    <!-- ============================
-         HERO CONTENT
-    ============================= -->
+<!-- ================= HERO ================= -->
 
-    <main class="hero-content">
+<section id="home">
 
+    <div class="hero-content">
 
-        <div class="content">
+        <img
+            src="./logo.jpeg"
+            class="hero-logo"
+            alt="Hotel Vahinisaheb Logo"
+        >
 
+        <h1>हॉटेल वाहिनी साहेब</h1>
 
-            <div class="small-title">
-                Authentic Maharashtrian Dining
-            </div>
+        <h2>महाराष्ट्रीयन चवीचा खरा आस्वाद</h2>
 
-
-            <h1 class="main-title">
-
-                महाराष्ट्रीयन<br>
-
-                चवीचा खरा आस्वाद
-
-            </h1>
-
-
-            <div class="restaurant-type">
-
-                Veg&nbsp;&nbsp; | &nbsp;&nbsp;Non-Veg
-                &nbsp;&nbsp; | &nbsp;&nbsp;Family Restaurant
-
-            </div>
+        <p>
+            Experience the authentic taste of Maharashtra,
+            prepared with traditional recipes, fresh ingredients
+            and the warmth of Maharashtrian hospitality.
+        </p>
 
 
-            <div class="location">
+        <div class="hero-buttons">
 
-                <span class="location-icon">
-                    📍
-                </span>
-
-                <span>
-                    शिक्रापूर, पुणे
-                </span>
-
-            </div>
-
-
-            <div class="buttons">
-
-                <a href="#" class="btn primary">
-                    View Menu
-                </a>
-
-                <a href="#" class="btn secondary">
-                    Order Now
-                </a>
-
-            </div>
-
-
-            <div class="features">
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        ✋
-                    </div>
-
-                    <span>
-                        Authentic<br>
-                        Maharashtrian Taste
-                    </span>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        🏠
-                    </div>
-
-                    <span>
-                        Fresh<br>
-                        Ingredients
-                    </span>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        ◉
-                    </div>
-
-                    <span>
-                        Family<br>
-                        Friendly
-                    </span>
-
-                </div>
-
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        ♨
-                    </div>
-
-                    <span>
-                        Hygienic &<br>
-                        Clean
-                    </span>
-
-                </div>
-
-
-            </div>
-
+            <a href="#menu" class="primary-btn">
+                Explore Menu
+            </a>
 
         </div>
 
-
-    </main>
-
+    </div>
 
 </section>
 
 
-</body>
+<!-- ================= FEATURES ================= -->
 
+<div class="feature-strip">
+
+    <div class="feature">
+        <div class="icon">🍛</div>
+        <h4>Authentic Taste</h4>
+        <p>Traditional Maharashtrian recipes</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">🌿</div>
+        <h4>Fresh Ingredients</h4>
+        <p>Fresh and quality ingredients</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">👨‍👩‍👧‍👦</div>
+        <h4>Family Friendly</h4>
+        <p>A perfect place for families</p>
+    </div>
+
+    <div class="feature">
+        <div class="icon">✨</div>
+        <h4>Hygienic & Clean</h4>
+        <p>Clean and comfortable ambience</p>
+    </div>
+
+</div>
+
+
+<!-- ================= MENU ================= -->
+
+<section id="menu">
+
+    <div class="section-title">
+
+        <span>Our Menu</span>
+
+        <h2>Discover Our Flavours</h2>
+
+        <p>
+            Explore our carefully prepared dishes made
+            using authentic Maharashtrian flavours.
+        </p>
+
+    </div>
+
+
+    <div class="menu-search">
+        <input id="menuSearch" type="search" placeholder="Search dishes..." oninput="searchMenu()">
+    </div>
+
+    <div class="menu-filters">
+
+        <button class="filter-btn active" onclick="filterMenu('all',this)">
+            All
+        </button>
+
+        <button class="filter-btn" onclick="filterMenu('veg',this)">
+            Veg
+        </button>
+
+        <button class="filter-btn" onclick="filterMenu('nonveg',this)">
+            Non-Veg
+        </button>
+
+        <button class="filter-btn" onclick="filterMenu('breads',this)">
+            Breads
+        </button>
+
+        <button class="filter-btn" onclick="filterMenu('drinks',this)">
+            Beverages
+        </button>
+
+    </div>
+
+
+    <div class="menu-grid" id="menuGrid">
+
+        <div class="food-card" data-category="veg">
+
+            <div class="food-img">🍛</div>
+
+            <div class="food-info">
+
+                <h3>महाराष्ट्रीयन थाळी</h3>
+
+                <p>
+                    Complete traditional Maharashtrian
+                    meal with authentic flavours.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">₹280</span>
+
+                    <span class="badge">
+                        BEST SELLER
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="food-card" data-category="nonveg">
+
+            <div class="food-img">🍗</div>
+
+            <div class="food-info">
+
+                <h3>मटण रस्सा</h3>
+
+                <p>
+                    Rich and spicy traditional
+                    Maharashtrian mutton curry.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">₹320</span>
+
+                    <span class="badge">
+                        CHEF'S PICK
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="food-card" data-category="veg">
+
+            <div class="food-img">🥘</div>
+
+            <div class="food-info">
+
+                <h3>भरली वांगी</h3>
+
+                <p>
+                    Stuffed brinjals cooked with
+                    authentic Maharashtrian masala.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">₹180</span>
+
+                    <span class="badge">
+                        POPULAR
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="food-card" data-category="breads">
+
+            <div class="food-img">🫓</div>
+
+            <div class="food-info">
+
+                <h3>भाकरी</h3>
+
+                <p>
+                    Traditional Maharashtrian
+                    millet flatbread.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">₹50</span>
+
+                    <span class="badge">
+                        TRADITIONAL
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="food-card" data-category="drinks">
+
+            <div class="food-img">🥛</div>
+
+            <div class="food-info">
+
+                <h3>ताक</h3>
+
+                <p>
+                    Refreshing traditional
+                    Maharashtrian buttermilk.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">₹40</span>
+
+                    <span class="badge">
+                        FRESH
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="food-card" data-category="nonveg">
+
+            <div class="food-img">🍖</div>
+
+            <div class="food-info">
+
+                <h3>चिकन मसाला</h3>
+
+                <p>
+                    Spicy chicken cooked with
+                    our signature masala.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">₹260</span>
+
+                    <span class="badge">
+                        SIGNATURE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="noResults" class="no-results">No dishes found. Try another search.</div>
+
+</section>
+
+
+<!-- ================= BUILD YOUR MEAL ================= -->
+
+<section id="meal">
+
+    <div class="section-title">
+
+        <span>Interactive Experience</span>
+
+        <h2>Build Your Meal</h2>
+
+        <p>
+            Create your perfect Maharashtrian meal.
+            Select your favourite items and see the total instantly.
+        </p>
+
+    </div>
+
+
+    <div class="meal-box">
+
+        <div class="meal-options">
+
+            <div class="meal-group">
+
+                <label>Main Course</label>
+
+                <select id="mainCourse" onchange="calculateMeal()">
+
+                    <option value="0">Select Main Course</option>
+
+                    <option value="180">Veg Thali - ₹180</option>
+
+                    <option value="280">Maharashtrian Thali - ₹280</option>
+
+                    <option value="320">Mutton Rassa - ₹320</option>
+
+                    <option value="260">Chicken Masala - ₹260</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="meal-group">
+
+                <label>Bread</label>
+
+                <select id="bread" onchange="calculateMeal()">
+
+                    <option value="0">Select Bread</option>
+
+                    <option value="50">Bhakri - ₹50</option>
+
+                    <option value="40">Chapati - ₹40</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="meal-group">
+
+                <label>Rice</label>
+
+                <select id="rice" onchange="calculateMeal()">
+
+                    <option value="0">Select Rice</option>
+
+                    <option value="90">Steamed Rice - ₹90</option>
+
+                    <option value="120">Jeera Rice - ₹120</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="meal-group">
+
+                <label>Drink</label>
+
+                <select id="drink" onchange="calculateMeal()">
+
+                    <option value="0">Select Drink</option>
+
+                    <option value="40">Taak - ₹40</option>
+
+                    <option value="60">Sol Kadhi - ₹60</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="meal-group">
+
+                <label>Dessert</label>
+
+                <select id="dessert" onchange="calculateMeal()">
+
+                    <option value="0">Select Dessert</option>
+
+                    <option value="100">Shrikhand - ₹100</option>
+
+                    <option value="120">Puran Poli - ₹120</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="meal-result">
+
+            <h3>Your Meal Summary</h3>
+
+            <p id="mealSummary">
+                Select items to build your meal.
+            </p>
+
+            <div class="meal-total">
+                Total: ₹<span id="mealTotal">0</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= AI ================= -->
+
+<section id="ai">
+
+    <div class="section-title">
+
+        <span>Smart Dining</span>
+
+        <h2>🤖 AI Dish Recommendation</h2>
+
+        <p>
+            Tell us what you like and our smart recommendation
+            system will suggest dishes for you.
+        </p>
+
+    </div>
+
+
+    <div class="ai-box">
+
+        <div class="ai-icon">
+            🤖
+        </div>
+
+        <h3>Find Your Perfect Dish</h3>
+
+        <div class="ai-options">
+
+            <select id="foodType">
+
+                <option value="">Veg / Non-Veg</option>
+                <option value="veg">Vegetarian</option>
+                <option value="nonveg">Non-Vegetarian</option>
+
+            </select>
+
+
+            <select id="spice">
+
+                <option value="">Spice Level</option>
+                <option value="mild">Mild</option>
+                <option value="spicy">Spicy</option>
+
+            </select>
+
+
+            <select id="budget">
+
+                <option value="">Budget</option>
+                <option value="low">Under ₹150</option>
+                <option value="medium">₹150 - ₹300</option>
+                <option value="high">Above ₹300</option>
+
+            </select>
+
+        </div>
+
+
+        <button class="primary-btn" onclick="recommendDish()">
+            ✨ Recommend My Dish
+        </button>
+
+
+        <div id="recommendation"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SIGNATURE ================= -->
+
+<section id="signature">
+
+    <div class="section-title">
+
+        <span>Chef's Selection</span>
+
+        <h2>Signature Dishes</h2>
+
+        <p>
+            Some of our most loved dishes,
+            specially recommended by our kitchen.
+        </p>
+
+    </div>
+
+
+    <div class="signature-grid">
+
+        <div class="signature-card">
+
+            <div class="dish-icon">🍛</div>
+
+            <h3>Maharashtrian Thali</h3>
+
+            <p>
+                A complete celebration of traditional
+                Maharashtrian flavours.
+            </p>
+
+        </div>
+
+
+        <div class="signature-card">
+
+            <div class="dish-icon">🍗</div>
+
+            <h3>Kolhapuri Mutton</h3>
+
+            <p>
+                Bold, spicy and rich mutton prepared
+                with traditional masala.
+            </p>
+
+        </div>
+
+
+        <div class="signature-card">
+
+            <div class="dish-icon">🫓</div>
+
+            <h3>Bhakri & Pithla</h3>
+
+            <p>
+                A timeless Maharashtrian combination
+                loved by generations.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <span>Our Story</span>
+
+        <h2>About Hotel Vahinisaheb</h2>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div>
+
+            <div class="about-card">
+
+                <h3>Our Tradition</h3>
+
+                <p>
+                    Hotel Vahinisaheb is built around the love
+                    for authentic Maharashtrian food and culture.
+                </p>
+
+                <p>
+                    From traditional recipes to carefully selected
+                    ingredients, every dish is prepared with
+                    attention and pride.
+                </p>
+
+                <p>
+                    Our mission is simple — bring the real taste
+                    of Maharashtra to every guest.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-highlight">
+
+            <div class="story-item">
+                <strong>15+</strong>
+                <span>Years of Service</span>
+            </div>
+
+            <div class="story-item">
+                <strong>50K+</strong>
+                <span>Happy Customers</span>
+            </div>
+
+            <div class="story-item">
+                <strong>40+</strong>
+                <span>Signature Dishes</span>
+            </div>
+
+            <div class="story-item">
+                <strong>4.8★</strong>
+                <span>Customer Rating</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <div class="section-title">
+
+        <span>Visual Journey</span>
+
+        <h2>Photo Gallery</h2>
+
+        <p>
+            Explore our food, ambience and
+            Maharashtrian hospitality.
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">🍛</div>
+
+        <div class="gallery-item">🏠</div>
+
+        <div class="gallery-item">🔥</div>
+
+        <div class="gallery-item">🥘</div>
+
+        <div class="gallery-item">🫓</div>
+
+        <div class="gallery-item">🌿</div>
+
+        <div class="gallery-item">🍗</div>
+
+        <div class="gallery-item">🪔</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= VIDEO ================= -->
+
+<section id="video">
+
+    <div class="section-title">
+
+        <span>Experience Us</span>
+
+        <h2>Inside Hotel Vahinisaheb</h2>
+
+        <p>
+            Take a glimpse into our food and ambience.
+        </p>
+
+    </div>
+
+
+    <div class="video-box">
+
+        <button class="play-button">
+            ▶
+        </button>
+
+        <h3 style="margin-top:20px;">
+            Restaurant Experience
+        </h3>
+
+        <p style="color:#aaa;margin-top:8px;">
+            Food • Ambience • Tradition
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section id="reviews">
+
+    <div class="section-title">
+
+        <span>Guest Experiences</span>
+
+        <h2>What Our Customers Say</h2>
+
+    </div>
+
+
+    <div class="review-grid">
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The Maharashtrian thali was absolutely
+                delicious. Everything tasted authentic."
+            </p>
+
+            <h4>— Rahul P.</h4>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "Amazing food and beautiful ambience.
+                Definitely one of my favourite restaurants."
+            </p>
+
+            <h4>— Sneha K.</h4>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                "The bhakri and pithla reminded me of
+                traditional homemade Maharashtrian food."
+            </p>
+
+            <h4>— Aditya S.</h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<div class="stats">
+
+    <div class="stat">
+
+        <strong>15+</strong>
+
+        <span>Years of Service</span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>50K+</strong>
+
+        <span>Happy Customers</span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>40+</strong>
+
+        <span>Signature Dishes</span>
+
+    </div>
+
+
+    <div class="stat">
+
+        <strong>4.8★</strong>
+
+        <span>Customer Rating</span>
+
+    </div>
+
+</div>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="section-title">
+
+        <span>Visit Us</span>
+
+        <h2>Contact Hotel Vahinisaheb</h2>
+
+        <p>
+            We'd love to welcome you and your family.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <h3>📍 Restaurant Information</h3>
+
+            <div class="contact-item">
+                📍 Shikrapur, Pune, Maharashtra
+            </div>
+
+            <div class="contact-item">
+                📞 +91 XXXXX XXXXX
+            </div>
+
+            <div class="contact-item">
+                🕐 11:00 AM – 11:00 PM
+            </div>
+
+            <div class="contact-item">
+                ⭐ 4.8 / 5 Customer Rating
+            </div>
+
+            <br>
+
+            <button class="primary-btn">
+                📍 Get Directions
+            </button>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>💬 Send Feedback</h3>
+
+            <form class="feedback-form"
+                  onsubmit="submitFeedback(event)">
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    placeholder="Your feedback or suggestion..."
+                    required
+                ></textarea>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Send Feedback
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="map-card">
+        <iframe src="https://www.google.com/maps?q=Shikrapur,Pune,Maharashtra&output=embed" loading="lazy" title="Hotel Vahinisaheb location map"></iframe>
+    </div>
+
+    <div style="text-align:center;margin-top:20px;">
+        <a class="secondary-btn" href="https://www.google.com/maps/search/?api=1&query=Shikrapur%2CPune%2CMaharashtra" target="_blank" rel="noopener">📍 Open in Google Maps</a>
+    </div>
+
+</section>
+
+
+<!-- ================= ADMIN PREVIEW ================= -->
+<section id="admin" class="admin-preview">
+    <div class="section-title">
+        <span>Owner Tools</span>
+        <h2>Admin Dashboard</h2>
+        <p>Demo preview for managing menu items, prices, gallery, feedback and restaurant information.</p>
+    </div>
+
+    <div class="admin-grid">
+        <div class="admin-card"><span>Menu Items</span><strong>24</strong></div>
+        <div class="admin-card"><span>Gallery Photos</span><strong>18</strong></div>
+        <div class="admin-card"><span>Feedback</span><strong>126</strong></div>
+        <div class="admin-card"><span>Rating</span><strong>4.8 ★</strong></div>
+    </div>
+
+    <div class="admin-actions">
+        <a href="#menu" class="primary-btn">Manage Menu</a>
+        <a href="#gallery" class="secondary-btn">Manage Gallery</a>
+        <a href="#contact" class="secondary-btn">View Feedback</a>
+    </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>Hotel Vahinisaheb</h3>
+
+            <p>
+                महाराष्ट्राच्या चवीचा खरा आस्वाद.
+            </p>
+
+            <p>
+                Authentic Maharashtrian food,
+                prepared with tradition and love.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Explore</h3>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#meal">Build Your Meal</a>
+
+            <a href="#ai">AI Recommendation</a>
+
+            <a href="#gallery">Gallery</a>
+
+            <a href="#video">Restaurant Video</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Restaurant</h3>
+
+            <a href="#about">Our Story</a>
+
+            <a href="#reviews">Reviews</a>
+
+            <a href="#contact">Contact</a>
+
+            <a href="#admin">Admin Dashboard</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Contact</h3>
+
+            <a href="tel:+91XXXXXXXXXX">
+                📞 Call Us
+            </a>
+
+            <a href="#">
+                💬 WhatsApp
+            </a>
+
+            <a href="#contact">
+                📍 Location
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Hotel Vahinisaheb.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- ================= FLOATING BUTTONS ================= -->
+
+<div class="floating-contact">
+
+    <a
+        href="tel:+91XXXXXXXXXX"
+        class="float-btn"
+        title="Call"
+    >
+        📞
+    </a>
+
+    <a
+        href="#contact"
+        class="float-btn"
+        title="WhatsApp"
+    >
+        💬
+    </a>
+
+    <a
+        href="#contact"
+        class="float-btn"
+        title="Location"
+    >
+        📍
+    </a>
+
+</div>
+
+
+<!-- DARK / LIGHT -->
+
+<button
+    class="theme-btn"
+    onclick="toggleTheme()"
+    title="Toggle Theme"
+>
+    🌓
+</button>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    /* MOBILE MENU */
+
+    function toggleMenu() {
+
+        document
+            .getElementById("navLinks")
+            .classList
+            .toggle("active");
+
+    }
+
+
+    /* MENU FILTER + SEARCH */
+
+    let activeCategory = "all";
+
+    function filterMenu(category, button) {
+        activeCategory = category;
+        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        searchMenu();
+    }
+
+    function searchMenu() {
+        const cards = document.querySelectorAll(".food-card");
+        const search = document.getElementById("menuSearch").value.toLowerCase().trim();
+        const noResults = document.getElementById("noResults");
+        let visible = 0;
+
+        cards.forEach(card => {
+            const categoryMatch = activeCategory === "all" || card.dataset.category === activeCategory;
+            const textMatch = card.innerText.toLowerCase().includes(search);
+            const show = categoryMatch && textMatch;
+            card.style.display = show ? "block" : "none";
+            if (show) visible++;
+        });
+
+        noResults.style.display = visible === 0 ? "block" : "none";
+    }
+
+
+    /* BUILD YOUR MEAL */
+
+    function calculateMeal() {
+
+        const main =
+            Number(document.getElementById("mainCourse").value);
+
+        const bread =
+            Number(document.getElementById("bread").value);
+
+        const rice =
+            Number(document.getElementById("rice").value);
+
+        const drink =
+            Number(document.getElementById("drink").value);
+
+        const dessert =
+            Number(document.getElementById("dessert").value);
+
+
+        const total =
+            main + bread + rice + drink + dessert;
+
+
+        document.getElementById("mealTotal").innerText =
+            total;
+
+
+        if (total === 0) {
+
+            document.getElementById("mealSummary").innerText =
+                "Select items to build your meal.";
+
+        } else {
+
+            document.getElementById("mealSummary").innerText =
+                "Your personalised Maharashtrian meal is ready!";
+
+        }
+
+    }
+
+
+    /* AI RECOMMENDATION */
+
+    function recommendDish() {
+
+        const type =
+            document.getElementById("foodType").value;
+
+        const spice =
+            document.getElementById("spice").value;
+
+        const budget =
+            document.getElementById("budget").value;
+
+
+        const result =
+            document.getElementById("recommendation");
+
+
+        if (!type || !spice || !budget) {
+
+            result.style.display = "block";
+
+            result.innerHTML =
+                "⚠️ Please answer all three questions first.";
+
+            return;
+
+        }
+
+
+        let dish =
+            "Maharashtrian Thali";
+
+
+        if (
+            type === "veg" &&
+            budget === "low"
+        ) {
+
+            dish = "Bhakri & Pithla";
+
+        }
+
+
+        else if (
+            type === "veg" &&
+            spice === "mild"
+        ) {
+
+            dish = "Maharashtrian Veg Thali";
+
+        }
+
+
+        else if (
+            type === "nonveg" &&
+            spice === "spicy"
+        ) {
+
+            dish = "Kolhapuri Mutton";
+
+        }
+
+
+        else if (
+            type === "nonveg"
+        ) {
+
+            dish = "Chicken Masala";
+
+        }
+
+
+        result.style.display = "block";
+
+
+        result.innerHTML =
+            "✨ Our recommendation for you is <strong>" +
+            dish +
+            "</strong>!";
+
+    }
+
+
+    /* FEEDBACK */
+
+    function submitFeedback(event) {
+
+        event.preventDefault();
+
+
+        alert(
+            "Thank you for your valuable feedback! ❤️"
+        );
+
+
+        event.target.reset();
+
+    }
+
+
+    /* DARK LIGHT */
+
+    function toggleTheme() {
+
+        document.body.classList.toggle("light-mode");
+
+    }
+
+
+</script>
+
+
+</body>
 </html>
