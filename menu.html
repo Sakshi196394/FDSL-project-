@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>हॉटेल वहिनीसाहेब | पूर्ण मेन्यू</title>
+
+
+<!-- ==============================
+     GOOGLE FONTS
+============================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+
+    font-family:"Noto Sans Devanagari", sans-serif;
+
+    background:#f5ecdc;
+
+    color:#321712;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.main-navbar{
+
+    position:relative;
+
+    z-index:1000;
+
+    width:100%;
+
+    height:85px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #160504,
+        #4c0c09 50%,
+        #210403
+    );
+
+    border-bottom:1px solid
+    rgba(255,255,255,0.18);
+
+}
+
+
+/* Navbar inner */
+
+.navbar-container{
+
+    width:90%;
+
+    max-width:1150px;
+
+    height:85px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+
+/* =====================================================
+   HOTEL LOGO
+===================================================== */
+
+.logo-wrapper{
+
+    width:155px;
+
+    height:75px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+}
+
+
+.hotel-logo{
+
+    width:155px;
+
+    height:155px;
+
+    object-fit:contain;
+
+    display:block;
+
+    transform:scale(1.08);
+
+    /*
+       If your logo has white background,
+       this helps blend it with the navbar.
+    */
+
+    mix-blend-mode:multiply;
+
+    filter:
+        drop-shadow(
+            0 3px 5px rgba(0,0,0,0.8)
+        );
+}
+
+
+/* =====================================================
+   NAVIGATION LINKS
+===================================================== */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+}
+
+
+.nav-links a{
+
+    position:relative;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-family:"DM Sans",sans-serif;
+
+    /*
+       Same size as your homepage
+    */
+
+    font-size:11px;
+
+    font-weight:500;
+
+    transition:0.3s;
+}
+
+
+.nav-links a:hover{
+
+    color:#f1c04f;
+}
+
+
+/* Active Menu */
+
+.nav-links a.active{
+
+    color:#f1c04f;
+}
+
+
+/* Active underline */
+
+.nav-links a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:-10px;
+
+    height:1px;
+
+    background:#edbd4e;
+}
+
+
+/* =====================================================
+   BOOK TABLE
+===================================================== */
+
+.book-table{
+
+    background:#edbd4e;
+
+    color:#241006 !important;
+
+    padding:11px 19px;
+
+    border-radius:5px;
+
+    font-weight:700 !important;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.4);
+}
+
+
+.book-table:hover{
+
+    background:#ffd66d;
+
+    transform:translateY(-2px);
+
+    color:#241006 !important;
+}
+
+
+/* =====================================================
+   MOBILE HAMBURGER
+===================================================== */
+
+.hamburger{
+
+    display:none;
+
+    font-size:25px;
+
+    color:#efc35a;
+
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   MENU HEADER
+===================================================== */
+
+.menu-header{
+
+    background:
+    radial-gradient(
+        circle at top,
+        #7d2019,
+        #4c0c09 45%,
+        #210403
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:45px 15px;
+}
+
+
+.menu-logo{
+
+    font-size:clamp(
+        32px,
+        6vw,
+        55px
+    );
+
+    font-weight:800;
+
+    color:#e9c86b;
+}
+
+
+.subtitle{
+
+    margin-top:8px;
+
+    font-size:17px;
+}
+
+
+.notice{
+
+    max-width:900px;
+
+    margin:22px auto 0;
+
+    padding:16px;
+
+    border:1px solid #dfbd62;
+
+    border-radius:12px;
+
+    color:#ffe9a6;
+
+    background:#350706;
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   CATEGORY NAVIGATION
+===================================================== */
+
+.nav{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    background:white;
+
+    padding:12px;
+
+    box-shadow:
+        0 3px 15px #0002;
+}
+
+
+.nav-container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+}
+
+
+.nav button{
+
+    background:white;
+
+    color:#5b100c;
+
+    border:2px solid #5b100c;
+
+    border-radius:25px;
+
+    padding:9px 14px;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-weight:700;
+}
+
+
+.nav button:hover,
+.nav button.active{
+
+    background:#5b100c;
+
+    color:white;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.container{
+
+    max-width:1250px;
+
+    margin:auto;
+
+    padding:25px 15px 50px;
+}
+
+
+.category{
+
+    margin-bottom:50px;
+
+    scroll-margin-top:90px;
+}
+
+
+.category-title{
+
+    background:
+    linear-gradient(
+        90deg,
+        #430806,
+        #85231d
+    );
+
+    color:#e9c86b;
+
+    padding:13px 18px;
+
+    border-radius:12px;
+
+    font-size:26px;
+
+    margin-bottom:15px;
+}
+
+
+.sub-title{
+
+    background:#d9b766;
+
+    color:#35110c;
+
+    padding:9px 15px;
+
+    border-radius:8px;
+
+    font-size:20px;
+
+    margin:25px 0 12px;
+}
+
+
+/* =====================================================
+   FOOD GRID
+===================================================== */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(270px,1fr)
+        );
+
+    gap:16px;
+}
+
+
+/* =====================================================
+   FOOD CARD
+===================================================== */
+
+.card{
+
+    background:#fffdf8;
+
+    border:1px solid #e4d1a8;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 5px 18px #00000012;
+
+    transition:.25s;
+}
+
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 10px 25px #0003;
+}
+
+
+/* =====================================================
+   FOOD IMAGE
+===================================================== */
+
+.food-image{
+
+    width:100%;
+
+    height:150px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:70px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #3b0806,
+        #761b15
+    );
+
+    overflow:hidden;
+}
+
+
+/*
+   When you add an actual image,
+   this class will display it correctly.
+*/
+
+.food-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+/* =====================================================
+   FOOD INFO
+===================================================== */
+
+.info{
+
+    padding:15px;
+}
+
+
+.food-name{
+
+    font-size:19px;
+
+    font-weight:800;
+}
+
+
+.price{
+
+    float:right;
+
+    color:#a1261d;
+
+    font-size:18px;
+
+    font-weight:800;
+}
+
+
+.description{
+
+    margin-top:8px;
+
+    color:#755e55;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+.badge{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    background:#f2e2b9;
+
+    color:#63430e;
+
+    padding:4px 10px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#360706;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px 15px;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:900px){
+
+    .nav-links{
+
+        display:none;
+    }
+
+    .hamburger{
+
+        display:block;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .navbar-container{
+
+        width:88%;
+    }
+
+    .logo-wrapper{
+
+        width:130px;
+    }
+
+    .hotel-logo{
+
+        width:130px;
+
+        height:130px;
+    }
+
+    .menu-logo{
+
+        font-size:34px;
+    }
+
+    .subtitle{
+
+        font-size:14px;
+    }
+
+    .category-title{
+
+        font-size:21px;
+    }
+
+    .sub-title{
+
+        font-size:18px;
+    }
+
+    .food-image{
+
+        height:130px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     MAIN NAVIGATION BAR
+===================================================== -->
+
+<header class="main-navbar">
+
+    <div class="navbar-container">
+
+
+        <!-- HOTEL IMAGE - TOP LEFT -->
+
+        <div class="logo-wrapper">
+
+            <img
+                src="./logo.jpeg"
+                alt="Hotel Vahinisaheb"
+                class="hotel-logo"
+            >
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="nav-links">
+
+            <!-- Home -->
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <!-- About -->
+
+            <a href="index.html#about">
+                About
+            </a>
+
+
+            <!-- Menu -->
+
+            <a href="menu.html"
+               class="active">
+                Menu
+            </a>
+
+
+            <!-- Gallery -->
+
+            <a href="index.html#gallery">
+                Gallery
+            </a>
+
+
+            <!-- Reviews -->
+
+            <a href="index.html#reviews">
+                Reviews
+            </a>
+
+
+            <!-- Contact -->
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+
+            <!-- Book Table -->
+
+            <a href="index.html#contact"
+               class="book-table">
+                Book Table
+            </a>
+
+        </nav>
+
+
+        <!-- MOBILE MENU -->
+
+        <div class="hamburger"
+             onclick="toggleMobileMenu()">
+
+            ☰
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MENU HEADER
+===================================================== -->
+
+<header class="menu-header">
+
+    <div class="menu-logo">
+
+        ॥ हॉटेल वहिनीसाहेब ॥
+
+    </div>
+
+
+    <div class="subtitle">
+
+        पारंपरिक महाराष्ट्रीयन चव • प्रेमाने केलेली सेवा
+
+    </div>
+
+
+    <div class="notice">
+
+        <b>टीप</b>
+
+        <br>
+
+        वेज आणि नॉनव्हेज स्वतंत्र किचन व्यवस्था.
+
+        <br>
+
+        एका थाळीत एकापेक्षा जास्त जेवल्यास
+        प्रति व्यक्ती ₹200/- चार्ज लागेल.
+
+        <br>
+
+        10 वर्षांपुढील मुलांस ₹100/- चार्ज लागेल.
+
+        <br>
+
+        थाळी सिस्टममध्ये 2 रोटी मिळतील.
+        त्यापेक्षा जास्त घेतल्यास एक्स्ट्रा चार्जेस लागतील.
+
+        <br>
+
+        ऑर्डर दिल्यानंतर कमीत कमी 15-20 मिनिटे लागतील.
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     CATEGORY NAVIGATION
+===================================================== -->
+
+<nav class="nav">
+
+<div class="nav-container">
+
+
+<button class="active"
+        data-category="all">
+
+    🍽️ संपूर्ण मेन्यू
+
+</button>
+
+
+<button data-category="chicken">
+
+    🍗 चिकन
+
+</button>
+
+
+<button data-category="gavran">
+
+    🐓 गावरान
+
+</button>
+
+
+<button data-category="mutton">
+
+    🍖 मटण
+
+</button>
+
+
+<button data-category="seafood">
+
+    🦀 खेकडा / मच्छी
+
+</button>
+
+
+<button data-category="egg">
+
+    🥚 अंडा
+
+</button>
+
+
+<button data-category="veg">
+
+    🌿 व्हेज
+
+</button>
+
+
+<button data-category="rice">
+
+    🍚 राईस
+
+</button>
+
+
+<button data-category="starter">
+
+    🥗 स्टार्टर
+
+</button>
+
+
+<button data-category="beverages">
+
+    🥤 बेव्हरेजेस
+
+</button>
+
+
+<button data-category="roti">
+
+    🫓 रोटी
+
+</button>
+
+
+</div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MENU
+===================================================== -->
+
+<main class="container"
+      id="menu">
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <strong>
+        ॥ हॉटेल वहिनीसाहेब ॥
+    </strong>
+
+    <br>
+
+    स्वाद जो मनात राहतो!
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+function toggleMobileMenu(){
+
+    const nav =
+        document.querySelector(".nav-links");
+
+    if(
+        nav.style.display === "flex"
+    ){
+
+        nav.style.display = "none";
+
+    }
+    else{
+
+        nav.style.display = "flex";
+
+        nav.style.flexDirection = "column";
+
+        nav.style.position = "absolute";
+
+        nav.style.top = "85px";
+
+        nav.style.right = "5%";
+
+        nav.style.background = "#210403";
+
+        nav.style.padding = "20px";
+
+        nav.style.borderRadius = "8px";
+
+        nav.style.gap = "18px";
+
+    }
+
+}
+
+
+/* =====================================================
+   COMPLETE MENU DATA
+===================================================== */
+
+const menu = [
+
+/* =====================================================
+   CHICKEN
+===================================================== */
+
+{
+category:"chicken",
+
+title:"🍗 चिकन मेन्यू",
+
+icon:"🍗",
+
+groups:[
+
+{
+title:"चिकन थाळी",
+
+items:[
+
+[
+"चिकन थाळी",
+290,
+"रस्सा मध्ये 4-पिस आणि रस्सा, भाकर, राईस अनलिमिटेड"
+],
+
+[
+"चिकन साधी थाळी",
+300,
+"रस्सा मध्ये 3-पिस, आळणी सूप मध्ये 2 पिस, 1 अंडे, सुकट वाटी आणि रस्सा, भाकर, राईस अनलिमिटेड"
+],
+
+[
+"चिकन स्पेशल थाळी",
+370,
+"रस्सा मध्ये 3-पिस, आळणी सूप मध्ये 2 पिस, 1 अंडे, सुकट वाटी, फ्राय मध्ये 4 पिस आणि रस्सा, भाकर, राईस अनलिमिटेड"
+],
+
+[
+"चिकन वहिनीसाहेब थाळी",
+470,
+"रस्सा मध्ये 3-पिस, आळणी सूप मध्ये 2 पिस, 1 अंडे, सुकट वाटी, फ्राय मध्ये 4 पिस, 1 चिलापी मासा आणि रस्सा, भाकर, राईस अनलिमिटेड"
+]
+
+]
+},
+
+{
+title:"चिकन उखर",
+
+items:[
+
+["चिकन उखर प्लेट",240,""],
+
+["चिकन सूप वाटी",120,""],
+
+["प्लेन सूप वाटी",60,""]
+
+]
+},
+
+{
+title:"चिकन फ्राय",
+
+items:[
+
+["चिकन फ्राय प्लेट",240,""],
+
+["चिकन फ्राय वाटी",170,""],
+
+["चिकन कलेजा फ्राय",240,""],
+
+["चिकन खर्डा फ्राय प्लेट",260,""],
+
+["चिकन लसूण फ्राय प्लेट",300,""]
+
+]
+},
+
+{
+title:"चिकन हंडी",
+
+items:[
+
+["चिकन फुल हंडी",790,""],
+
+["चिकन हाफ हंडी",420,""],
+
+["चिकन मालवणी फुल हंडी",890,""],
+
+["चिकन मालवणी हाफ हंडी",470,""],
+
+["चिकन करी",240,""]
+
+]
+},
+
+{
+title:"चिकन प्लेन हंडी रस्सा",
+
+items:[
+
+["फुल हंडी रस्सा",500,""],
+
+["हाफ हंडी रस्सा",300,""],
+
+["प्लेन रस्सा",130,""]
+
+]
+},
+
+{
+title:"चिकन राईस",
+
+items:[
+
+["चिकन आळणी राईस",330,""]
+
+]
+}
+
+]
+
+},
+
+
+/* =====================================================
+   GAVRAN
+===================================================== */
+
+{
+category:"gavran",
+
+title:"🐓 गावरान मेन्यू",
+
+icon:"🐓",
+
+groups:[
+
+{
+title:"गावरान थाळी",
+
+items:[
+
+["गावरान थाळी",310,
+"रस्सा मध्ये 4-पिस आणि रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["गावरान साधी थाळी",330,
+"रस्सा मध्ये 3-पिस, आळणी सूप मध्ये 2 पिस, 1 अंडे, सुकट वाटी आणि रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["गावरान स्पेशल थाळी",430,
+"रस्सा मध्ये 3-पिस, आळणी सूप मध्ये 2 पिस, 1 अंडे, सुकट वाटी, फ्राय मध्ये 4 पिस आणि रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["गावरान वहिनीसाहेब थाळी",510,
+"रस्सा मध्ये 3-पिस, आळणी सूप मध्ये 2 पिस, 1 अंडे, सुकट वाटी, फ्राय मध्ये 4 पिस, 1 चिलापी मासा आणि रस्सा, भाकर, राईस अनलिमिटेड"]
+
+]
+},
+
+{
+title:"गावरान उखर",
+
+items:[
+
+["गावरान उखर प्लेट",310,""],
+
+["गावरान सूप वाटी",140,""]
+
+]
+},
+
+{
+title:"गावरान फ्राय",
+
+items:[
+
+["गावरान लसूण फ्राय",280,""],
+
+["गावरान फ्राय",270,""]
+
+]
+},
+
+{
+title:"गावरान हंडी",
+
+items:[
+
+["गावरान फुल हंडी",890,""],
+
+["गावरान हाफ हंडी",500,""],
+
+["गावरान मालवणी फुल हंडी",990,""],
+
+["गावरान मालवणी हाफ हंडी",570,""],
+
+["गावरान करी",300,""]
+
+]
+},
+
+{
+title:"गावरान प्लेन हंडी रस्सा",
+
+items:[
+
+["फुल हंडी रस्सा",500,""],
+
+["हाफ हंडी रस्सा",300,""],
+
+["प्लेन रस्सा",130,""]
+
+]
+},
+
+{
+title:"गावरान राईस",
+
+items:[
+
+["गावरान आळणी राईस",390,""],
+
+["प्लेन आळणी राईस",170,""]
+
+]
+}
+
+]
+
+},
+
+
+/* =====================================================
+   MUTTON
+===================================================== */
+
+{
+category:"mutton",
+
+title:"🍖 मटण मेन्यू",
+
+icon:"🍖",
+
+groups:[
+
+{
+title:"मटण थाळी",
+
+items:[
+
+["मटण थाळी",360,
+"रस्सा मध्ये 4-पिस आणि रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["मटण साधी थाळी",390,
+"रस्सा मध्ये 3-पिस, आळणी सूप मध्ये 2 पिस, 1 अंडे, सुकट वाटी आणि रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["मटण स्पेशल थाळी",500,
+"रस्सा मध्ये 3-पिस, आळणी सूप मध्ये 2 पिस, 1 अंडे, सुकट वाटी, फ्राय मध्ये 4 पिस आणि रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["मटण वहिनीसाहेब थाळी",580,
+"रस्सा मध्ये 3-पिस, आळणी सूप मध्ये 2 पिस, 1 अंडे, सुकट वाटी, फ्राय मध्ये 4 पिस, 1 चिलापी मासा आणि रस्सा, भाकर, राईस अनलिमिटेड"]
+
+]
+},
+
+{
+title:"मटण उखर",
+
+items:[
+
+["मटण उखर प्लेट",340,""],
+
+["मटण सूप वाटी",180,""],
+
+["रस्सा वाटी",50,""]
+
+]
+},
+
+{
+title:"मटण फ्राय",
+
+items:[
+
+["मटण फ्राय प्लेट",370,""],
+
+["मटण खर्डा फ्राय प्लेट",400,""],
+
+["मटण लसूण फ्राय प्लेट",380,""],
+
+["मटण कलेजा फ्राय",330,""],
+
+["वजडी फ्राय प्लेट",290,""]
+
+]
+},
+
+{
+title:"मटण हंडी",
+
+items:[
+
+["मटण फुल हंडी",990,""],
+
+["मटण हाफ हंडी",570,""],
+
+["मटण मालवणी फुल हंडी",1090,""],
+
+["मटण मालवणी हाफ हंडी",620,""],
+
+["मटण करी",340,""]
+
+]
+},
+
+{
+title:"मटण प्लेन हंडी रस्सा",
+
+items:[
+
+["फुल हंडी रस्सा",650,""],
+
+["हाफ हंडी रस्सा",400,""]
+
+]
+},
+
+{
+title:"मटण राईस",
+
+items:[
+
+["प्लेन आळणी राईस",170,""],
+
+["मटण आळणी राईस",420,""]
+
+]
+}
+
+]
+
+},
+
+
+/* =====================================================
+   SEAFOOD
+===================================================== */
+
+{
+category:"seafood",
+
+title:"🦀 खेकडा / मच्छी मेन्यू",
+
+icon:"🦀",
+
+groups:[
+
+{
+title:"खेकडा थाळी",
+
+items:[
+
+["खेकडा थाळी",360,
+"रस्सा मध्ये 2-खेकडे, 2 अंडे, 1 सुकट वाटी, रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["खेकडा फ्राय प्लेट",310,""],
+
+["खेकडा स्पेशल थाळी",470,
+"रस्सा मध्ये 2-खेकडे, 2 खेकडा फ्राय वाटी, 2 अंडे, 2 सुकट वाटी, रस्सा, भाकर, राईस अनलिमिटेड"]
+
+]
+},
+
+{
+title:"मच्छी आणि सुकट",
+
+items:[
+
+["मच्छी फ्राय प्लेट",270,""],
+
+["सुकट फ्राय प्लेट",160,""],
+
+["सुकट वाटी",30,""]
+
+]
+}
+
+]
+
+},
+
+
+/* =====================================================
+   EGG
+===================================================== */
+
+{
+category:"egg",
+
+title:"🥚 अंडा मेन्यू",
+
+icon:"🥚",
+
+groups:[
+
+{
+title:"अंडा थाळी",
+
+items:[
+
+["अंडा थाळी",280,
+"रस्सा मध्ये 1 अंडे, अंड्यांची वाटी आणि रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["अंडा स्पेशल थाळी",310,
+"रस्सा मध्ये 1 अंडे, अंडा फ्राय वाटी, ग्रीन सलाड आणि रस्सा, भाकर, राईस अनलिमिटेड"]
+
+]
+},
+
+{
+title:"अंडा मेन्यू",
+
+items:[
+
+["अंडा करी",160,""],
+
+["अंडा राईस",180,""],
+
+["अंडा बिर्याणी",260,""],
+
+["ऑम्लेट",100,""],
+
+["अंडाभुर्जी",130,""]
+
+]
+},
+
+{
+title:"अंडा फ्राय",
+
+items:[
+
+["बॉयल फ्राय प्लेट",60,""],
+
+["बॉयल प्लेट",40,""]
+
+]
+}
+
+]
+
+},
+
+
+/* =====================================================
+   VEG
+===================================================== */
+
+{
+category:"veg",
+
+title:"🌿 व्हेज मेन्यू",
+
+icon:"🥘",
+
+groups:[
+
+{
+title:"व्हेज थाळी",
+
+items:[
+
+["मासवडी थाळी",280,
+"रस्सामध्ये 1 पिस, वाटीमध्ये 2 पिस, एक रबडी वाटी आणि रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["मासवडी वहिनीसाहेब स्पे. थाळी",370,
+"रस्सामध्ये 1 पिस, वाटीमध्ये 2 फ्राय पिस, 2 अळूवडी, 2 कोथिंबीर वडी, एक रबडी वाटी, ठेचा, लोणचे आणि रस्सा, भाकर, राईस अनलिमिटेड"],
+
+["व्हेज थाळी मेनू",270,
+"पनीर भाजी वाटी 1, शेवभाजी किंवा मिक्स व्हेज वाटी 1, रोटी 3, डाळ वाटी 1, राईस वाटी 1, एक रबडी वाटी"]
+
+]
+},
+
+{
+title:"मासवडी",
+
+items:[
+
+["मासवडी वाटी",100,""],
+
+["मासवडी फ्राय वाटी",150,""],
+
+["मासवडी सुकी प्लेट",200,""],
+
+["मासवडी फ्राय सुकी प्लेट",250,""],
+
+["मासवडी करी",240,""],
+
+["मासवडी फुल हंडी",840,""],
+
+["मासवडी फ्राय फुल हंडी",990,""],
+
+["मासवडी हाफ हंडी",420,""],
+
+["मासवडी फ्राय हाफ हंडी",520,""]
+
+]
+},
+
+{
+title:"व्हेज मेन्यू",
+
+items:[
+
+["पनीर मसाला",200,""],
+
+["पनीर टिक्का मसाला",230,""],
+
+["मटर पनीर मसाला",200,""],
+
+["बटर पनीर मसाला",210,""],
+
+["काजू मसाला",210,""],
+
+["काजू पनीर मसाला",220,""],
+
+["मशरूम मसाला",200,""],
+
+["मिक्स व्हेज",190,""],
+
+["व्हेज कोल्हापुरी",190,""],
+
+["शेवभाजी",170,""],
+
+["ग्रीन पीस मसाला",180,""],
+
+["डाळ तडका",140,""],
+
+["डाळ फ्राय",120,""]
+
+]
+}
+
+]
+
+},
+
+
+/* =====================================================
+   RICE
+===================================================== */
+
+{
+category:"rice",
+
+title:"🍚 राईस & बिर्याणी",
+
+icon:"🍚",
+
+groups:[
+
+{
+title:"राईस",
+
+items:[
+
+["राईस वाटी",30,""],
+
+["चिकन आळणी राईस",330,""],
+
+["प्लेन आळणी राईस",170,""],
+
+["गावरान आळणी राईस",390,""],
+
+["मटण आळणी राईस",420,""],
+
+["डाळ खिचडी",170,""],
+
+["फुल जिरा राईस",150,""],
+
+["हाफ जिरा राईस",90,""],
+
+["प्युअर इंद्रायणी राईस फुल",150,""],
+
+["प्युअर इंद्रायणी राईस हाफ",90,""],
+
+["व्हेज पुलाव",260,""]
+
+]
+},
+
+{
+title:"दम बिर्याणी",
+
+items:[
+
+["मटण बिर्याणी",460,""],
+
+["गावरान बिर्याणी",410,""],
+
+["चिकन बिर्याणी",360,""],
+
+["व्हेज बिर्याणी",260,""],
+
+["अंडा बिर्याणी",260,""]
+
+]
+}
+
+]
+
+},
+
+
+/* =====================================================
+   STARTER
+===================================================== */
+
+{
+category:"starter",
+
+title:"🥗 स्टार्टर",
+
+icon:"🥗",
+
+groups:[
+
+{
+title:"स्टार्टर",
+
+items:[
+
+["मसाला पापड",30,""],
+
+["फ्राय पापड",20,""],
+
+["रोस्ट पापड",20,""],
+
+["ग्रीन सलाड",80,""],
+
+["पनीर चिल्ली",220,""],
+
+["सोयाबीन चिल्ली",180,""],
+
+["मशरूम चिल्ली",180,""],
+
+["पनीर पटियाला",280,""],
+
+["व्हेज पटियाला",240,""],
+
+["पिकल",130,""],
+
+["ग्रीन सलाड",80,""]
+
+]
+}
+
+]
+
+},
+
+
+/* =====================================================
+   BEVERAGES
+===================================================== */
+
+{
+category:"beverages",
+
+title:"🥤 बेव्हरेजेस",
+
+icon:"🥤",
+
+groups:[
+
+{
+title:"बेव्हरेजेस",
+
+items:[
+
+["बिसलेरी",20,""],
+
+["कोल्ड्रिंक",20,""],
+
+["सोलकढी",30,""],
+
+["साध ताक",20,""],
+
+["जिरा सोडा",20,""]
+
+]
+}
+
+]
+
+},
+
+
+/* =====================================================
+   ROTI
+===================================================== */
+
+{
+category:"roti",
+
+title:"🫓 रोटी",
+
+icon:"🫓",
+
+groups:[
+
+{
+title:"रोटी",
+
+items:[
+
+["बाजरी भाकर",30,""],
+
+["ज्वारी भाकर",40,""],
+
+["चपाती",25,""],
+
+["रोटी",15,""],
+
+["बटर रोटी",20,""],
+
+["नान",40,""],
+
+["बटर नान",50,""]
+
+]
+}
+
+]
+
+}
+
+];
+
+
+/* =====================================================
+   RENDER MENU
+===================================================== */
+
+const menuContainer =
+document.getElementById("menu");
+
+
+function renderMenu(category="all"){
+
+    menuContainer.innerHTML="";
+
+
+    let selected =
+        category === "all"
+        ? menu
+        : menu.filter(
+            section =>
+            section.category === category
+          );
+
+
+    selected.forEach(section=>{
+
+        const sectionElement =
+            document.createElement("section");
+
+
+        sectionElement.className =
+            "category";
+
+
+        let content="";
+
+
+        section.groups.forEach(group=>{
+
+            content += `
+
+            <h3 class="sub-title">
+
+                ${group.title}
+
+            </h3>
+
+
+            <div class="grid">
+
+
+            ${group.items.map(item=>`
+
+                <div class="card">
+
+
+                    <div class="food-image">
+
+                        ${section.icon}
+
+                    </div>
+
+
+                    <div class="info">
+
+
+                        <span class="food-name">
+
+                            ${item[0]}
+
+                        </span>
+
+
+                        <span class="price">
+
+                            ₹${item[1]}/-
+
+                        </span>
+
+
+                        ${
+                            item[2]
+                            ?
+                            `<div class="description">
+
+                                ${item[2]}
+
+                            </div>`
+                            :
+                            ""
+                        }
+
+
+                        <div class="badge">
+
+                            ${
+                                section.category === "veg"
+                                ?
+                                "🌿 शाकाहारी"
+
+                                :
+
+                                section.category === "starter"
+                                ?
+                                "🥗 स्टार्टर"
+
+                                :
+
+                                section.category === "beverages"
+                                ?
+                                "🥤 पेय"
+
+                                :
+
+                                section.category === "roti"
+                                ?
+                                "🫓 रोटी"
+
+                                :
+
+                                section.category === "rice"
+                                ?
+                                "🍚 राईस"
+
+                                :
+
+                                "🍗 नॉनव्हेज"
+                            }
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            `).join("")}
+
+
+            </div>
+
+            `;
+
+        });
+
+
+        sectionElement.innerHTML = `
+
+            <h2 class="category-title">
+
+                ${section.title}
+
+            </h2>
+
+            ${content}
+
+        `;
+
+
+        menuContainer.appendChild(
+            sectionElement
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   CATEGORY BUTTONS
+===================================================== */
+
+document
+.querySelectorAll(".nav button")
+.forEach(button=>{
+
+    button.addEventListener(
+        "click",
+        ()=>{
+
+
+            document
+            .querySelectorAll(".nav button")
+            .forEach(btn=>{
+
+                btn.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            button.classList.add(
+                "active"
+            );
+
+
+            renderMenu(
+                button.dataset.category
+            );
+
+
+            window.scrollTo({
+
+                top:0,
+
+                behavior:"smooth"
+
+            });
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   INITIAL MENU
+===================================================== */
+
+renderMenu("all");
+
+</script>
+
+
+</body>
+
+</html>
