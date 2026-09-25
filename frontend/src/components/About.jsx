@@ -1,12 +1,15 @@
 import React from 'react';
-import { restaurantInfo, statisticsData } from '../services/mockData';
+import { statisticsData } from '../services/mockData';
+import { useRestaurant } from '../context/RestaurantContext';
 
 export default function About() {
+  const { restaurant } = useRestaurant();
+
   return (
     <section id="about">
       <div className="section-title">
         <span>Our Story</span>
-        <h2>About {restaurantInfo.name}</h2>
+        <h2>About {restaurant.name}</h2>
       </div>
 
       <div className="about-grid">
@@ -14,7 +17,7 @@ export default function About() {
           <div className="about-card">
             <h3>Our Tradition</h3>
             <p>
-              {restaurantInfo.name} is built around the love for authentic
+              {restaurant.name} is built around the love for authentic
               Maharashtrian food and culture.
             </p>
             <p>

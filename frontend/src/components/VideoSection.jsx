@@ -1,12 +1,14 @@
 import React from 'react';
-import { restaurantInfo } from '../services/mockData';
+import { useRestaurant } from '../context/RestaurantContext';
 
 export default function VideoSection() {
+  const { restaurant } = useRestaurant();
+
   return (
     <section id="video">
       <div className="section-title">
         <span>Experience Us</span>
-        <h2>Inside {restaurantInfo.name}</h2>
+        <h2>Inside {restaurant.name}</h2>
         <p>Take a glimpse into our food and ambience.</p>
       </div>
 

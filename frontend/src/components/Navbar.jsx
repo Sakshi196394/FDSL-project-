@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import logoImg from '../assets/logo.jpeg';
-import { restaurantInfo } from '../services/mockData';
+import { useRestaurant } from '../context/RestaurantContext';
 
 export default function Navbar() {
+  const { restaurant } = useRestaurant();
   const [menuActive, setMenuActive] = useState(false);
 
   const toggleMenu = () => {
@@ -17,9 +18,9 @@ export default function Navbar() {
     <header>
       <nav className="navbar">
         <a href="#home" className="brand" onClick={closeMenu}>
-          <img src={logoImg} alt={restaurantInfo.name} />
+          <img src={logoImg} alt={restaurant.name} />
           <div className="brand-text">
-            <h3>{restaurantInfo.name}</h3>
+            <h3>{restaurant.name}</h3>
             <p>Authentic Maharashtrian Taste</p>
           </div>
         </a>

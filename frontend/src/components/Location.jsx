@@ -1,13 +1,15 @@
 import React from 'react';
-import { restaurantInfo } from '../services/mockData';
 import Feedback from './Feedback';
+import { useRestaurant } from '../context/RestaurantContext';
 
 export default function Location() {
+  const { restaurant } = useRestaurant();
+
   return (
     <section id="contact">
       <div className="section-title">
         <span>Visit Us</span>
-        <h2>Contact {restaurantInfo.name}</h2>
+        <h2>Contact {restaurant.name}</h2>
         <p>We'd love to welcome you and your family.</p>
       </div>
 
@@ -16,25 +18,25 @@ export default function Location() {
           <h3>📍 Restaurant Information</h3>
 
           <div className="contact-item">
-            📍 {restaurantInfo.address}
+            📍 {restaurant.address}
           </div>
 
           <div className="contact-item">
-            📞 {restaurantInfo.phone}
+            📞 {restaurant.phone}
           </div>
 
           <div className="contact-item">
-            🕐 {restaurantInfo.hours}
+            🕐 {restaurant.hours}
           </div>
 
           <div className="contact-item">
-            ⭐ {restaurantInfo.rating}
+            ⭐ {restaurant.rating}
           </div>
 
           <br />
 
           <a
-            href={restaurantInfo.googleMapsUrl}
+            href={restaurant.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="primary-btn"
@@ -48,16 +50,16 @@ export default function Location() {
 
       <div className="map-card">
         <iframe
-          src={restaurantInfo.mapEmbedUrl}
+          src={restaurant.mapEmbedUrl}
           loading="lazy"
-          title={`${restaurantInfo.name} location map`}
+          title={`${restaurant.name} location map`}
         ></iframe>
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '20px' }}>
         <a
           className="secondary-btn"
-          href={restaurantInfo.googleMapsUrl}
+          href={restaurant.googleMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
         >

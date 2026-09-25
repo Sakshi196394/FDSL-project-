@@ -1,13 +1,15 @@
 import React from 'react';
-import { restaurantInfo } from '../services/mockData';
+import { useRestaurant } from '../context/RestaurantContext';
 
 export default function FloatingContactButtons() {
+  const { restaurant } = useRestaurant();
+
   return (
     <div className="floating-contact">
       <a
-        href={`tel:${restaurantInfo.phone}`}
+        href={`tel:${restaurant.phone}`}
         className="float-btn"
-        title="Call Hotel Vahinisaheb"
+        title={`Call ${restaurant.name}`}
       >
         📞
       </a>
@@ -15,7 +17,7 @@ export default function FloatingContactButtons() {
       <a
         href="#contact"
         className="float-btn"
-        title="WhatsApp Hotel Vahinisaheb"
+        title={`WhatsApp ${restaurant.name}`}
       >
         💬
       </a>

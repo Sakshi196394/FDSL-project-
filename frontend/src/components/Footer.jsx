@@ -1,13 +1,15 @@
 import React from 'react';
-import { restaurantInfo } from '../services/mockData';
+import { useRestaurant } from '../context/RestaurantContext';
 
 export default function Footer() {
+  const { restaurant } = useRestaurant();
+
   return (
     <footer>
       <div className="footer-grid">
         <div>
-          <h3>{restaurantInfo.name}</h3>
-          <p className="marathi">{restaurantInfo.taglineMarathi}</p>
+          <h3>{restaurant.name}</h3>
+          <p className="marathi">{restaurant.taglineMarathi}</p>
           <p style={{ marginTop: '8px' }}>
             Authentic Maharashtrian food, prepared with tradition and love.
           </p>
@@ -31,14 +33,14 @@ export default function Footer() {
 
         <div>
           <h3>Quick Contact</h3>
-          <a href={`tel:${restaurantInfo.phone}`}>📞 Call Us</a>
+          <a href={`tel:${restaurant.phone}`}>📞 Call Us</a>
           <a href="#contact">💬 WhatsApp</a>
           <a href="#contact">📍 Location</a>
         </div>
       </div>
 
       <div className="copyright">
-        © 2026 {restaurantInfo.name}. All Rights Reserved.
+        © 2026 {restaurant.name}. All Rights Reserved.
       </div>
     </footer>
   );

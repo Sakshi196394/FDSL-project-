@@ -1,14 +1,17 @@
 package com.hotelvahinisaheb.entity;
 
 /**
- * Categories for restaurant menu items.
+ * Menu categories for Hotel Vahinisaheb restaurant.
  */
 public enum MenuCategory {
-    ALL,
-    VEG,
-    NON_VEG,
-    BREADS,
-    DRINKS,
-    DESSERT,
-    THALI
+    THALI,
+    CHICKEN,
+    GAVRAN,
+    MUTTON,
+    SEAFOOD_EGG_BIRYANI_TANDOOR,
+    VEG_MASWADI,
+    RICE,
+    STARTERS,
+    BEVERAGES,
+    ROTI
 }
