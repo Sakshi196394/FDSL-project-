@@ -1,0 +1,16 @@
+:root {
+  --gold: #c89b3c;
+  --gold-light: #f2c866;
+  --saffron: #d97706;
+  --dark: #0d0d0d;
+  --brown: #3a1f0b;
+  --cream: #f8f4ec;
+  --white: #ffffff;
+  --muted: #d4c8b5;
+  --border-gold: rgba(200, 155, 60, 0.25);
+  
+  --font-heading: 'Cinzel', serif;
+  --font-subheading: 'Cormorant Garamond', serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-marathi: 'Tiro Devanagari Marathi', 'Tiro Devanagari', serif;
+}

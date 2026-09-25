@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
     <style>
+        /* Lohit Devanagari for Marathi text */
+        .marathi {
+            font-family: 'Tiro Devanagari', sans-serif !important;
+        }
 
         /* =========================
            GLOBAL
@@ -95,7 +102,7 @@
             background: rgba(8, 5, 4, 0.88);
             backdrop-filter: blur(12px);
 
-            border-bottom: 1px solid rgba(200,155,60,0.25);
+            border-bottom: 1px solid rgba(200, 155, 60, 0.25);
         }
 
         .navbar {
@@ -184,11 +191,9 @@
              YOUR ORIGINAL BACKGROUND IS NOT CHANGED.
             */
             background-image:
-                linear-gradient(
-                    90deg,
-                    rgba(0,0,0,.25),
-                    rgba(0,0,0,.05)
-                ),
+                linear-gradient(90deg,
+                    rgba(0, 0, 0, .25),
+                    rgba(0, 0, 0, .05)),
                 url("./background.png");
 
             background-size: cover;
@@ -211,7 +216,7 @@
             border-radius: 50%;
             border: 3px solid var(--gold);
             margin-bottom: 25px;
-            box-shadow: 0 0 35px rgba(200,155,60,.25);
+            box-shadow: 0 0 35px rgba(200, 155, 60, .25);
         }
 
         .hero-content h1 {
@@ -257,9 +262,9 @@
         }
 
         .secondary-btn {
-            background: rgba(0,0,0,.55);
+            background: rgba(0, 0, 0, .55);
             color: white;
-            border: 1px solid rgba(255,255,255,.5);
+            border: 1px solid rgba(255, 255, 255, .5);
         }
 
         .primary-btn:hover,
@@ -272,19 +277,19 @@
         ========================= */
 
         .feature-strip {
-            background: rgba(20,12,7,.96);
-            border-top: 1px solid rgba(200,155,60,.2);
-            border-bottom: 1px solid rgba(200,155,60,.2);
+            background: rgba(20, 12, 7, .96);
+            border-top: 1px solid rgba(200, 155, 60, .2);
+            border-bottom: 1px solid rgba(200, 155, 60, .2);
 
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             padding: 25px 7%;
         }
 
         .feature {
             text-align: center;
             padding: 10px;
-            border-right: 1px solid rgba(255,255,255,.1);
+            border-right: 1px solid rgba(255, 255, 255, .1);
         }
 
         .feature:last-child {
@@ -312,7 +317,7 @@
         ========================= */
 
         #menu {
-            background: linear-gradient(180deg,#100b08,#1b0e06);
+            background: linear-gradient(180deg, #100b08, #1b0e06);
         }
 
         .menu-filters {
@@ -333,8 +338,8 @@
             width: 100%;
             padding: 15px 20px 15px 48px;
             border-radius: 40px;
-            border: 1px solid rgba(200,155,60,.35);
-            background: rgba(255,255,255,.05);
+            border: 1px solid rgba(200, 155, 60, .35);
+            background: rgba(255, 255, 255, .05);
             color: #fff;
             outline: none;
             font-family: inherit;
@@ -342,7 +347,7 @@
 
         .menu-search input:focus {
             border-color: var(--gold-light);
-            box-shadow: 0 0 0 4px rgba(200,155,60,.08);
+            box-shadow: 0 0 0 4px rgba(200, 155, 60, .08);
         }
 
         .menu-search::before {
@@ -365,7 +370,7 @@
         .filter-btn {
             padding: 9px 18px;
             border-radius: 30px;
-            border: 1px solid rgba(200,155,60,.4);
+            border: 1px solid rgba(200, 155, 60, .4);
             background: transparent;
             color: #ddd;
             transition: .3s;
@@ -379,13 +384,13 @@
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
         .food-card {
-            background: rgba(255,255,255,.06);
-            border: 1px solid rgba(200,155,60,.2);
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(200, 155, 60, .2);
             border-radius: 15px;
             overflow: hidden;
             transition: .35s;
@@ -395,12 +400,12 @@
         .food-card:hover {
             transform: translateY(-8px);
             border-color: var(--gold);
-            box-shadow: 0 15px 35px rgba(0,0,0,.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .4);
         }
 
         .food-img {
             height: 210px;
-            background: linear-gradient(135deg,#5d2a0c,#1b0d05);
+            background: linear-gradient(135deg, #5d2a0c, #1b0d05);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -439,7 +444,7 @@
             font-size: 9px;
             padding: 5px 9px;
             border-radius: 20px;
-            background: rgba(217,119,6,.2);
+            background: rgba(217, 119, 6, .2);
             color: #ffc765;
         }
 
@@ -456,13 +461,13 @@
             margin: auto;
             padding: 40px;
             border-radius: 20px;
-            background: linear-gradient(145deg,#201208,#0e0b09);
-            border: 1px solid rgba(200,155,60,.35);
+            background: linear-gradient(145deg, #201208, #0e0b09);
+            border: 1px solid rgba(200, 155, 60, .35);
         }
 
         .meal-options {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
@@ -477,7 +482,7 @@
             width: 100%;
             padding: 13px;
             background: #17110d;
-            border: 1px solid rgba(200,155,60,.3);
+            border: 1px solid rgba(200, 155, 60, .3);
             color: white;
             border-radius: 8px;
         }
@@ -486,8 +491,8 @@
             margin-top: 30px;
             padding: 25px;
             border-radius: 12px;
-            background: rgba(200,155,60,.08);
-            border: 1px solid rgba(200,155,60,.25);
+            background: rgba(200, 155, 60, .08);
+            border: 1px solid rgba(200, 155, 60, .25);
         }
 
         .meal-total {
@@ -501,7 +506,7 @@
         ========================= */
 
         #ai {
-            background: linear-gradient(135deg,#211107,#0d0d0d);
+            background: linear-gradient(135deg, #211107, #0d0d0d);
         }
 
         .ai-box {
@@ -509,8 +514,8 @@
             margin: auto;
             padding: 45px;
             border-radius: 20px;
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(200,155,60,.3);
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(200, 155, 60, .3);
             text-align: center;
         }
 
@@ -521,7 +526,7 @@
 
         .ai-options {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin: 30px 0;
         }
@@ -539,7 +544,7 @@
             margin-top: 25px;
             padding: 20px;
             border-radius: 12px;
-            background: rgba(200,155,60,.1);
+            background: rgba(200, 155, 60, .1);
             color: #ffe39a;
         }
 
@@ -553,7 +558,7 @@
 
         .signature-grid {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
@@ -561,8 +566,8 @@
             padding: 35px 25px;
             text-align: center;
             border-radius: 18px;
-            background: linear-gradient(145deg,#3a1f0b,#160c06);
-            border: 1px solid rgba(200,155,60,.25);
+            background: linear-gradient(145deg, #3a1f0b, #160c06);
+            border: 1px solid rgba(200, 155, 60, .25);
         }
 
         .signature-card .dish-icon {
@@ -572,7 +577,7 @@
 
         .signature-card h3 {
             color: var(--gold-light);
-            font-family: 'Cinzel',serif;
+            font-family: 'Cinzel', serif;
         }
 
         .signature-card p {
@@ -599,13 +604,13 @@
 
         .about-card {
             padding: 40px;
-            background: linear-gradient(145deg,#2b1608,#100b08);
-            border: 1px solid rgba(200,155,60,.25);
+            background: linear-gradient(145deg, #2b1608, #100b08);
+            border: 1px solid rgba(200, 155, 60, .25);
             border-radius: 20px;
         }
 
         .about-card h3 {
-            font-family: 'Cinzel',serif;
+            font-family: 'Cinzel', serif;
             color: var(--gold-light);
             font-size: 30px;
             margin-bottom: 18px;
@@ -619,7 +624,7 @@
 
         .story-highlight {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin-top: 25px;
         }
@@ -627,7 +632,7 @@
         .story-item {
             padding: 20px;
             border-radius: 10px;
-            background: rgba(200,155,60,.08);
+            background: rgba(200, 155, 60, .08);
             text-align: center;
         }
 
@@ -652,19 +657,19 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
         }
 
         .gallery-item {
             height: 220px;
             border-radius: 12px;
-            background: linear-gradient(135deg,#4c240b,#120904);
+            background: linear-gradient(135deg, #4c240b, #120904);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 60px;
-            border: 1px solid rgba(200,155,60,.15);
+            border: 1px solid rgba(200, 155, 60, .15);
             transition: .3s;
             cursor: pointer;
         }
@@ -683,8 +688,8 @@
             height: 430px;
             margin: auto;
             border-radius: 20px;
-            background: linear-gradient(135deg,#3a1b09,#090605);
-            border: 1px solid rgba(200,155,60,.3);
+            background: linear-gradient(135deg, #3a1b09, #090605);
+            border: 1px solid rgba(200, 155, 60, .3);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -696,7 +701,7 @@
             height: 80px;
             border-radius: 50%;
             border: 2px solid var(--gold-light);
-            background: rgba(200,155,60,.15);
+            background: rgba(200, 155, 60, .15);
             color: var(--gold-light);
             font-size: 30px;
         }
@@ -711,14 +716,14 @@
 
         .review-grid {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
         .review-card {
             padding: 30px;
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(200,155,60,.2);
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(200, 155, 60, .2);
             border-radius: 15px;
         }
 
@@ -745,16 +750,16 @@
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             background: #211107;
-            border-top: 1px solid rgba(200,155,60,.2);
-            border-bottom: 1px solid rgba(200,155,60,.2);
+            border-top: 1px solid rgba(200, 155, 60, .2);
+            border-bottom: 1px solid rgba(200, 155, 60, .2);
         }
 
         .stat {
             text-align: center;
             padding: 50px 15px;
-            border-right: 1px solid rgba(255,255,255,.1);
+            border-right: 1px solid rgba(255, 255, 255, .1);
         }
 
         .stat:last-child {
@@ -765,7 +770,7 @@
             display: block;
             font-size: 42px;
             color: var(--gold-light);
-            font-family: 'Cinzel',serif;
+            font-family: 'Cinzel', serif;
         }
 
         .stat span {
@@ -778,7 +783,7 @@
         ========================= */
 
         #contact {
-            background: linear-gradient(135deg,#211107,#0d0d0d);
+            background: linear-gradient(135deg, #211107, #0d0d0d);
         }
 
         .contact-grid {
@@ -790,19 +795,19 @@
         .contact-card {
             padding: 35px;
             border-radius: 15px;
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(200,155,60,.2);
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(200, 155, 60, .2);
         }
 
         .contact-card h3 {
             color: var(--gold-light);
-            font-family: 'Cinzel',serif;
+            font-family: 'Cinzel', serif;
             margin-bottom: 20px;
         }
 
         .contact-item {
             padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,.08);
+            border-bottom: 1px solid rgba(255, 255, 255, .08);
             color: #ccc;
         }
 
@@ -831,7 +836,7 @@
             margin-top: 35px;
             overflow: hidden;
             border-radius: 18px;
-            border: 1px solid rgba(200,155,60,.25);
+            border: 1px solid rgba(200, 155, 60, .25);
             background: #120b07;
         }
 
@@ -843,12 +848,12 @@
         }
 
         .admin-preview {
-            background: linear-gradient(135deg,#100a06,#241308);
+            background: linear-gradient(135deg, #100a06, #241308);
         }
 
         .admin-grid {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 18px;
             max-width: 1100px;
             margin: auto;
@@ -857,17 +862,20 @@
         .admin-card {
             padding: 24px;
             border-radius: 16px;
-            background: rgba(255,255,255,.045);
-            border: 1px solid rgba(200,155,60,.2);
+            background: rgba(255, 255, 255, .045);
+            border: 1px solid rgba(200, 155, 60, .2);
         }
 
-        .admin-card span { color: #aaa; font-size: 12px; }
+        .admin-card span {
+            color: #aaa;
+            font-size: 12px;
+        }
 
         .admin-card strong {
             display: block;
             margin-top: 8px;
             color: var(--gold-light);
-            font-family: 'Cinzel',serif;
+            font-family: 'Cinzel', serif;
             font-size: 27px;
         }
 
@@ -886,7 +894,7 @@
         footer {
             background: #080604;
             padding: 55px 7% 25px;
-            border-top: 1px solid rgba(200,155,60,.2);
+            border-top: 1px solid rgba(200, 155, 60, .2);
         }
 
         .footer-grid {
@@ -896,7 +904,7 @@
         }
 
         footer h3 {
-            font-family: 'Cinzel',serif;
+            font-family: 'Cinzel', serif;
             color: var(--gold-light);
             margin-bottom: 15px;
         }
@@ -917,7 +925,7 @@
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,.08);
+            border-top: 1px solid rgba(255, 255, 255, .08);
             color: #777;
             font-size: 12px;
         }
@@ -948,7 +956,7 @@
             align-items: center;
             justify-content: center;
             font-size: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,.4);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .4);
         }
 
         /* =========================
@@ -1001,15 +1009,15 @@
 
             .menu-grid,
             .signature-grid {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .gallery-grid {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .admin-grid {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1036,7 +1044,7 @@
 
             .feature-strip,
             .stats {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .about-grid,
@@ -1075,7 +1083,7 @@
 
             .feature {
                 border-right: none;
-                border-bottom: 1px solid rgba(255,255,255,.1);
+                border-bottom: 1px solid rgba(255, 255, 255, .1);
             }
 
             .admin-grid {
@@ -1095,1315 +1103,1283 @@
                 display: none;
             }
         }
-
     </style>
 </head>
 
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR ================= -->
 
-<header>
+    <header>
 
-    <nav class="navbar">
+        <nav class="navbar">
 
-        <a href="#home" class="brand">
+            <a href="#home" class="brand">
 
-            <img src="./logo.jpeg" alt="Hotel Vahinisaheb">
+                <img src="./logo.jpeg" alt="Hotel Vahinisaheb">
 
-            <div class="brand-text">
-                <h3>Hotel Vahinisaheb</h3>
-                <p>Authentic Maharashtrian Taste</p>
-            </div>
+                <div class="brand-text">
+                    <h3>Hotel Vahinisaheb</h3>
+                    <p>Authentic Maharashtrian Taste</p>
+                </div>
 
-        </a>
-
-
-        <div class="menu-toggle" onclick="toggleMenu()">
-            ☰
-        </div>
-
-
-        <ul class="nav-links" id="navLinks">
-
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#meal">Build Your Meal</a></li>
-            <li><a href="#ai">AI Recommendation</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
-
-        </ul>
-
-    </nav>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section id="home">
-
-    <div class="hero-content">
-
-        <img
-            src="./logo.jpeg"
-            class="hero-logo"
-            alt="Hotel Vahinisaheb Logo"
-        >
-
-        <h1>हॉटेल वाहिनी साहेब</h1>
-
-        <h2>महाराष्ट्रीयन चवीचा खरा आस्वाद</h2>
-
-        <p>
-            Experience the authentic taste of Maharashtra,
-            prepared with traditional recipes, fresh ingredients
-            and the warmth of Maharashtrian hospitality.
-        </p>
-
-
-        <div class="hero-buttons">
-
-            <a href="#menu" class="primary-btn">
-                Explore Menu
             </a>
 
-        </div>
 
-    </div>
-
-</section>
-
-
-<!-- ================= FEATURES ================= -->
-
-<div class="feature-strip">
-
-    <div class="feature">
-        <div class="icon">🍛</div>
-        <h4>Authentic Taste</h4>
-        <p>Traditional Maharashtrian recipes</p>
-    </div>
-
-    <div class="feature">
-        <div class="icon">🌿</div>
-        <h4>Fresh Ingredients</h4>
-        <p>Fresh and quality ingredients</p>
-    </div>
-
-    <div class="feature">
-        <div class="icon">👨‍👩‍👧‍👦</div>
-        <h4>Family Friendly</h4>
-        <p>A perfect place for families</p>
-    </div>
-
-    <div class="feature">
-        <div class="icon">✨</div>
-        <h4>Hygienic & Clean</h4>
-        <p>Clean and comfortable ambience</p>
-    </div>
-
-</div>
-
-
-<!-- ================= MENU ================= -->
-
-<section id="menu">
-
-    <div class="section-title">
-
-        <span>Our Menu</span>
-
-        <h2>Discover Our Flavours</h2>
-
-        <p>
-            Explore our carefully prepared dishes made
-            using authentic Maharashtrian flavours.
-        </p>
-
-    </div>
-
-
-    <div class="menu-search">
-        <input id="menuSearch" type="search" placeholder="Search dishes..." oninput="searchMenu()">
-    </div>
-
-    <div class="menu-filters">
-
-        <button class="filter-btn active" onclick="filterMenu('all',this)">
-            All
-        </button>
-
-        <button class="filter-btn" onclick="filterMenu('veg',this)">
-            Veg
-        </button>
-
-        <button class="filter-btn" onclick="filterMenu('nonveg',this)">
-            Non-Veg
-        </button>
-
-        <button class="filter-btn" onclick="filterMenu('breads',this)">
-            Breads
-        </button>
-
-        <button class="filter-btn" onclick="filterMenu('drinks',this)">
-            Beverages
-        </button>
-
-    </div>
-
-
-    <div class="menu-grid" id="menuGrid">
-
-        <div class="food-card" data-category="veg">
-
-            <div class="food-img">🍛</div>
-
-            <div class="food-info">
-
-                <h3>महाराष्ट्रीयन थाळी</h3>
-
-                <p>
-                    Complete traditional Maharashtrian
-                    meal with authentic flavours.
-                </p>
-
-                <div class="food-bottom">
-
-                    <span class="price">₹280</span>
-
-                    <span class="badge">
-                        BEST SELLER
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="food-card" data-category="nonveg">
-
-            <div class="food-img">🍗</div>
-
-            <div class="food-info">
-
-                <h3>मटण रस्सा</h3>
-
-                <p>
-                    Rich and spicy traditional
-                    Maharashtrian mutton curry.
-                </p>
-
-                <div class="food-bottom">
-
-                    <span class="price">₹320</span>
-
-                    <span class="badge">
-                        CHEF'S PICK
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="food-card" data-category="veg">
-
-            <div class="food-img">🥘</div>
-
-            <div class="food-info">
-
-                <h3>भरली वांगी</h3>
-
-                <p>
-                    Stuffed brinjals cooked with
-                    authentic Maharashtrian masala.
-                </p>
-
-                <div class="food-bottom">
-
-                    <span class="price">₹180</span>
-
-                    <span class="badge">
-                        POPULAR
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="food-card" data-category="breads">
-
-            <div class="food-img">🫓</div>
-
-            <div class="food-info">
-
-                <h3>भाकरी</h3>
-
-                <p>
-                    Traditional Maharashtrian
-                    millet flatbread.
-                </p>
-
-                <div class="food-bottom">
-
-                    <span class="price">₹50</span>
-
-                    <span class="badge">
-                        TRADITIONAL
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="food-card" data-category="drinks">
-
-            <div class="food-img">🥛</div>
-
-            <div class="food-info">
-
-                <h3>ताक</h3>
-
-                <p>
-                    Refreshing traditional
-                    Maharashtrian buttermilk.
-                </p>
-
-                <div class="food-bottom">
-
-                    <span class="price">₹40</span>
-
-                    <span class="badge">
-                        FRESH
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="food-card" data-category="nonveg">
-
-            <div class="food-img">🍖</div>
-
-            <div class="food-info">
-
-                <h3>चिकन मसाला</h3>
-
-                <p>
-                    Spicy chicken cooked with
-                    our signature masala.
-                </p>
-
-                <div class="food-bottom">
-
-                    <span class="price">₹260</span>
-
-                    <span class="badge">
-                        SIGNATURE
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div id="noResults" class="no-results">No dishes found. Try another search.</div>
-
-</section>
-
-
-<!-- ================= BUILD YOUR MEAL ================= -->
-
-<section id="meal">
-
-    <div class="section-title">
-
-        <span>Interactive Experience</span>
-
-        <h2>Build Your Meal</h2>
-
-        <p>
-            Create your perfect Maharashtrian meal.
-            Select your favourite items and see the total instantly.
-        </p>
-
-    </div>
-
-
-    <div class="meal-box">
-
-        <div class="meal-options">
-
-            <div class="meal-group">
-
-                <label>Main Course</label>
-
-                <select id="mainCourse" onchange="calculateMeal()">
-
-                    <option value="0">Select Main Course</option>
-
-                    <option value="180">Veg Thali - ₹180</option>
-
-                    <option value="280">Maharashtrian Thali - ₹280</option>
-
-                    <option value="320">Mutton Rassa - ₹320</option>
-
-                    <option value="260">Chicken Masala - ₹260</option>
-
-                </select>
-
+            <div class="menu-toggle" onclick="toggleMenu()">
+                ☰
             </div>
 
 
-            <div class="meal-group">
+            <ul class="nav-links" id="navLinks">
 
-                <label>Bread</label>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#meal">Build Your Meal</a></li>
+                <li><a href="#ai">AI Recommendation</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
 
-                <select id="bread" onchange="calculateMeal()">
+            </ul>
 
-                    <option value="0">Select Bread</option>
+        </nav>
 
-                    <option value="50">Bhakri - ₹50</option>
+    </header>
 
-                    <option value="40">Chapati - ₹40</option>
 
-                </select>
+    <!-- ================= HERO ================= -->
 
-            </div>
+    <section id="home">
 
+        <div class="hero-content">
 
-            <div class="meal-group">
+            <img src="./logo.jpeg" class="hero-logo" alt="Hotel Vahinisaheb Logo">
 
-                <label>Rice</label>
+            <h1 class="marathi">हॉटेल वहिनी साहेब</h1>
 
-                <select id="rice" onchange="calculateMeal()">
-
-                    <option value="0">Select Rice</option>
-
-                    <option value="90">Steamed Rice - ₹90</option>
-
-                    <option value="120">Jeera Rice - ₹120</option>
-
-                </select>
-
-            </div>
-
-
-            <div class="meal-group">
-
-                <label>Drink</label>
-
-                <select id="drink" onchange="calculateMeal()">
-
-                    <option value="0">Select Drink</option>
-
-                    <option value="40">Taak - ₹40</option>
-
-                    <option value="60">Sol Kadhi - ₹60</option>
-
-                </select>
-
-            </div>
-
-
-            <div class="meal-group">
-
-                <label>Dessert</label>
-
-                <select id="dessert" onchange="calculateMeal()">
-
-                    <option value="0">Select Dessert</option>
-
-                    <option value="100">Shrikhand - ₹100</option>
-
-                    <option value="120">Puran Poli - ₹120</option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-
-        <div class="meal-result">
-
-            <h3>Your Meal Summary</h3>
-
-            <p id="mealSummary">
-                Select items to build your meal.
-            </p>
-
-            <div class="meal-total">
-                Total: ₹<span id="mealTotal">0</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= AI ================= -->
-
-<section id="ai">
-
-    <div class="section-title">
-
-        <span>Smart Dining</span>
-
-        <h2>🤖 AI Dish Recommendation</h2>
-
-        <p>
-            Tell us what you like and our smart recommendation
-            system will suggest dishes for you.
-        </p>
-
-    </div>
-
-
-    <div class="ai-box">
-
-        <div class="ai-icon">
-            🤖
-        </div>
-
-        <h3>Find Your Perfect Dish</h3>
-
-        <div class="ai-options">
-
-            <select id="foodType">
-
-                <option value="">Veg / Non-Veg</option>
-                <option value="veg">Vegetarian</option>
-                <option value="nonveg">Non-Vegetarian</option>
-
-            </select>
-
-
-            <select id="spice">
-
-                <option value="">Spice Level</option>
-                <option value="mild">Mild</option>
-                <option value="spicy">Spicy</option>
-
-            </select>
-
-
-            <select id="budget">
-
-                <option value="">Budget</option>
-                <option value="low">Under ₹150</option>
-                <option value="medium">₹150 - ₹300</option>
-                <option value="high">Above ₹300</option>
-
-            </select>
-
-        </div>
-
-
-        <button class="primary-btn" onclick="recommendDish()">
-            ✨ Recommend My Dish
-        </button>
-
-
-        <div id="recommendation"></div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= SIGNATURE ================= -->
-
-<section id="signature">
-
-    <div class="section-title">
-
-        <span>Chef's Selection</span>
-
-        <h2>Signature Dishes</h2>
-
-        <p>
-            Some of our most loved dishes,
-            specially recommended by our kitchen.
-        </p>
-
-    </div>
-
-
-    <div class="signature-grid">
-
-        <div class="signature-card">
-
-            <div class="dish-icon">🍛</div>
-
-            <h3>Maharashtrian Thali</h3>
+            <h2 class="marathi">महाराष्ट्रीयन चवीचा खरा आस्वाद</h2>
 
             <p>
-                A complete celebration of traditional
-                Maharashtrian flavours.
+                Experience the authentic taste of Maharashtra,
+                prepared with traditional recipes, fresh ingredients
+                and the warmth of Maharashtrian hospitality.
             </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="primary-btn">
+                    Explore Menu
+                </a>
+
+            </div>
 
         </div>
 
+    </section>
 
-        <div class="signature-card">
 
-            <div class="dish-icon">🍗</div>
+    <!-- ================= FEATURES ================= -->
 
-            <h3>Kolhapuri Mutton</h3>
+    <div class="feature-strip">
+
+        <div class="feature">
+            <div class="icon">🍛</div>
+            <h4>Authentic Taste</h4>
+            <p>Traditional Maharashtrian recipes</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🌿</div>
+            <h4>Fresh Ingredients</h4>
+            <p>Fresh and quality ingredients</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">👨‍👩‍👧‍👦</div>
+            <h4>Family Friendly</h4>
+            <p>A perfect place for families</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">✨</div>
+            <h4>Hygienic & Clean</h4>
+            <p>Clean and comfortable ambience</p>
+        </div>
+
+    </div>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section id="menu">
+
+        <div class="section-title">
+
+            <span>Our Menu</span>
+
+            <h2>Discover Our Flavours</h2>
 
             <p>
-                Bold, spicy and rich mutton prepared
-                with traditional masala.
+                Explore our carefully prepared dishes made
+                using authentic Maharashtrian flavours.
             </p>
 
         </div>
 
 
-        <div class="signature-card">
-
-            <div class="dish-icon">🫓</div>
-
-            <h3>Bhakri & Pithla</h3>
-
-            <p>
-                A timeless Maharashtrian combination
-                loved by generations.
-            </p>
-
+        <div class="menu-search">
+            <input id="menuSearch" type="search" placeholder="Search dishes..." oninput="searchMenu()">
         </div>
 
-    </div>
+        <div class="menu-filters">
 
-</section>
+            <button class="filter-btn active" onclick="filterMenu('all',this)">
+                All
+            </button>
 
+            <button class="filter-btn" onclick="filterMenu('veg',this)">
+                Veg
+            </button>
 
-<!-- ================= ABOUT ================= -->
+            <button class="filter-btn" onclick="filterMenu('nonveg',this)">
+                Non-Veg
+            </button>
 
-<section id="about">
+            <button class="filter-btn" onclick="filterMenu('breads',this)">
+                Breads
+            </button>
 
-    <div class="section-title">
-
-        <span>Our Story</span>
-
-        <h2>About Hotel Vahinisaheb</h2>
-
-    </div>
-
-
-    <div class="about-grid">
-
-        <div>
-
-            <div class="about-card">
-
-                <h3>Our Tradition</h3>
-
-                <p>
-                    Hotel Vahinisaheb is built around the love
-                    for authentic Maharashtrian food and culture.
-                </p>
-
-                <p>
-                    From traditional recipes to carefully selected
-                    ingredients, every dish is prepared with
-                    attention and pride.
-                </p>
-
-                <p>
-                    Our mission is simple — bring the real taste
-                    of Maharashtra to every guest.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="story-highlight">
-
-            <div class="story-item">
-                <strong>15+</strong>
-                <span>Years of Service</span>
-            </div>
-
-            <div class="story-item">
-                <strong>50K+</strong>
-                <span>Happy Customers</span>
-            </div>
-
-            <div class="story-item">
-                <strong>40+</strong>
-                <span>Signature Dishes</span>
-            </div>
-
-            <div class="story-item">
-                <strong>4.8★</strong>
-                <span>Customer Rating</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= GALLERY ================= -->
-
-<section id="gallery">
-
-    <div class="section-title">
-
-        <span>Visual Journey</span>
-
-        <h2>Photo Gallery</h2>
-
-        <p>
-            Explore our food, ambience and
-            Maharashtrian hospitality.
-        </p>
-
-    </div>
-
-
-    <div class="gallery-grid">
-
-        <div class="gallery-item">🍛</div>
-
-        <div class="gallery-item">🏠</div>
-
-        <div class="gallery-item">🔥</div>
-
-        <div class="gallery-item">🥘</div>
-
-        <div class="gallery-item">🫓</div>
-
-        <div class="gallery-item">🌿</div>
-
-        <div class="gallery-item">🍗</div>
-
-        <div class="gallery-item">🪔</div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= VIDEO ================= -->
-
-<section id="video">
-
-    <div class="section-title">
-
-        <span>Experience Us</span>
-
-        <h2>Inside Hotel Vahinisaheb</h2>
-
-        <p>
-            Take a glimpse into our food and ambience.
-        </p>
-
-    </div>
-
-
-    <div class="video-box">
-
-        <button class="play-button">
-            ▶
-        </button>
-
-        <h3 style="margin-top:20px;">
-            Restaurant Experience
-        </h3>
-
-        <p style="color:#aaa;margin-top:8px;">
-            Food • Ambience • Tradition
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- ================= REVIEWS ================= -->
-
-<section id="reviews">
-
-    <div class="section-title">
-
-        <span>Guest Experiences</span>
-
-        <h2>What Our Customers Say</h2>
-
-    </div>
-
-
-    <div class="review-grid">
-
-        <div class="review-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                "The Maharashtrian thali was absolutely
-                delicious. Everything tasted authentic."
-            </p>
-
-            <h4>— Rahul P.</h4>
-
-        </div>
-
-
-        <div class="review-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                "Amazing food and beautiful ambience.
-                Definitely one of my favourite restaurants."
-            </p>
-
-            <h4>— Sneha K.</h4>
-
-        </div>
-
-
-        <div class="review-card">
-
-            <div class="stars">
-                ★★★★★
-            </div>
-
-            <p>
-                "The bhakri and pithla reminded me of
-                traditional homemade Maharashtrian food."
-            </p>
-
-            <h4>— Aditya S.</h4>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= STATS ================= -->
-
-<div class="stats">
-
-    <div class="stat">
-
-        <strong>15+</strong>
-
-        <span>Years of Service</span>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>50K+</strong>
-
-        <span>Happy Customers</span>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>40+</strong>
-
-        <span>Signature Dishes</span>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>4.8★</strong>
-
-        <span>Customer Rating</span>
-
-    </div>
-
-</div>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact">
-
-    <div class="section-title">
-
-        <span>Visit Us</span>
-
-        <h2>Contact Hotel Vahinisaheb</h2>
-
-        <p>
-            We'd love to welcome you and your family.
-        </p>
-
-    </div>
-
-
-    <div class="contact-grid">
-
-        <div class="contact-card">
-
-            <h3>📍 Restaurant Information</h3>
-
-            <div class="contact-item">
-                📍 Shikrapur, Pune, Maharashtra
-            </div>
-
-            <div class="contact-item">
-                📞 +91 XXXXX XXXXX
-            </div>
-
-            <div class="contact-item">
-                🕐 11:00 AM – 11:00 PM
-            </div>
-
-            <div class="contact-item">
-                ⭐ 4.8 / 5 Customer Rating
-            </div>
-
-            <br>
-
-            <button class="primary-btn">
-                📍 Get Directions
+            <button class="filter-btn" onclick="filterMenu('drinks',this)">
+                Beverages
             </button>
 
         </div>
 
 
-        <div class="contact-card">
+        <div class="menu-grid" id="menuGrid">
 
-            <h3>💬 Send Feedback</h3>
+            <div class="food-card" data-category="veg">
 
-            <form class="feedback-form"
-                  onsubmit="submitFeedback(event)">
+                <div class="food-img">🍛</div>
 
-                <input
-                    type="text"
-                    placeholder="Your Name"
-                    required
-                >
+                <div class="food-info">
 
-                <input
-                    type="email"
-                    placeholder="Your Email"
-                    required
-                >
+                    <h3>महाराष्ट्रीयन थाळी</h3>
 
-                <textarea
-                    placeholder="Your feedback or suggestion..."
-                    required
-                ></textarea>
+                    <p>
+                        Complete traditional Maharashtrian
+                        meal with authentic flavours.
+                    </p>
 
-                <button
-                    type="submit"
-                    class="primary-btn"
-                >
-                    Send Feedback
+                    <div class="food-bottom">
+
+                        <span class="price">₹280</span>
+
+                        <span class="badge">
+                            BEST SELLER
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="nonveg">
+
+                <div class="food-img">🍗</div>
+
+                <div class="food-info">
+
+                    <h3>मटण रस्सा</h3>
+
+                    <p>
+                        Rich and spicy traditional
+                        Maharashtrian mutton curry.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <span class="price">₹320</span>
+
+                        <span class="badge">
+                            CHEF'S PICK
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="veg">
+
+                <div class="food-img">🥘</div>
+
+                <div class="food-info">
+
+                    <h3>भरली वांगी</h3>
+
+                    <p>
+                        Stuffed brinjals cooked with
+                        authentic Maharashtrian masala.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <span class="price">₹180</span>
+
+                        <span class="badge">
+                            POPULAR
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="breads">
+
+                <div class="food-img">🫓</div>
+
+                <div class="food-info">
+
+                    <h3>भाकरी</h3>
+
+                    <p>
+                        Traditional Maharashtrian
+                        millet flatbread.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <span class="price">₹50</span>
+
+                        <span class="badge">
+                            TRADITIONAL
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="drinks">
+
+                <div class="food-img">🥛</div>
+
+                <div class="food-info">
+
+                    <h3>ताक</h3>
+
+                    <p>
+                        Refreshing traditional
+                        Maharashtrian buttermilk.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <span class="price">₹40</span>
+
+                        <span class="badge">
+                            FRESH
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="food-card" data-category="nonveg">
+
+                <div class="food-img">🍖</div>
+
+                <div class="food-info">
+
+                    <h3>चिकन मसाला</h3>
+
+                    <p>
+                        Spicy chicken cooked with
+                        our signature masala.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <span class="price">₹260</span>
+
+                        <span class="badge">
+                            SIGNATURE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="noResults" class="no-results">No dishes found. Try another search.</div>
+
+    </section>
+
+
+    <!-- ================= BUILD YOUR MEAL ================= -->
+
+    <section id="meal">
+
+        <div class="section-title">
+
+            <span>Interactive Experience</span>
+
+            <h2>Build Your Meal</h2>
+
+            <p>
+                Create your perfect Maharashtrian meal.
+                Select your favourite items and see the total instantly.
+            </p>
+
+        </div>
+
+
+        <div class="meal-box">
+
+            <div class="meal-options">
+
+                <div class="meal-group">
+
+                    <label>Main Course</label>
+
+                    <select id="mainCourse" onchange="calculateMeal()">
+
+                        <option value="0">Select Main Course</option>
+
+                        <option value="180">Veg Thali - ₹180</option>
+
+                        <option value="280">Maharashtrian Thali - ₹280</option>
+
+                        <option value="320">Mutton Rassa - ₹320</option>
+
+                        <option value="260">Chicken Masala - ₹260</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="meal-group">
+
+                    <label>Bread</label>
+
+                    <select id="bread" onchange="calculateMeal()">
+
+                        <option value="0">Select Bread</option>
+
+                        <option value="50">Bhakri - ₹50</option>
+
+                        <option value="40">Chapati - ₹40</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="meal-group">
+
+                    <label>Rice</label>
+
+                    <select id="rice" onchange="calculateMeal()">
+
+                        <option value="0">Select Rice</option>
+
+                        <option value="90">Steamed Rice - ₹90</option>
+
+                        <option value="120">Jeera Rice - ₹120</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="meal-group">
+
+                    <label>Drink</label>
+
+                    <select id="drink" onchange="calculateMeal()">
+
+                        <option value="0">Select Drink</option>
+
+                        <option value="40">Taak - ₹40</option>
+
+                        <option value="60">Sol Kadhi - ₹60</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="meal-group">
+
+                    <label>Dessert</label>
+
+                    <select id="dessert" onchange="calculateMeal()">
+
+                        <option value="0">Select Dessert</option>
+
+                        <option value="100">Shrikhand - ₹100</option>
+
+                        <option value="120">Puran Poli - ₹120</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="meal-result">
+
+                <h3>Your Meal Summary</h3>
+
+                <p id="mealSummary">
+                    Select items to build your meal.
+                </p>
+
+                <div class="meal-total">
+                    Total: ₹<span id="mealTotal">0</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= AI ================= -->
+
+    <section id="ai">
+
+        <div class="section-title">
+
+            <span>Smart Dining</span>
+
+            <h2>🤖 AI Dish Recommendation</h2>
+
+            <p>
+                Tell us what you like and our smart recommendation
+                system will suggest dishes for you.
+            </p>
+
+        </div>
+
+
+        <div class="ai-box">
+
+            <div class="ai-icon">
+                🤖
+            </div>
+
+            <h3>Find Your Perfect Dish</h3>
+
+            <div class="ai-options">
+
+                <select id="foodType">
+
+                    <option value="">Veg / Non-Veg</option>
+                    <option value="veg">Vegetarian</option>
+                    <option value="nonveg">Non-Vegetarian</option>
+
+                </select>
+
+
+                <select id="spice">
+
+                    <option value="">Spice Level</option>
+                    <option value="mild">Mild</option>
+                    <option value="spicy">Spicy</option>
+
+                </select>
+
+
+                <select id="budget">
+
+                    <option value="">Budget</option>
+                    <option value="low">Under ₹150</option>
+                    <option value="medium">₹150 - ₹300</option>
+                    <option value="high">Above ₹300</option>
+
+                </select>
+
+            </div>
+
+
+            <button class="primary-btn" onclick="recommendDish()">
+                ✨ Recommend My Dish
+            </button>
+
+
+            <div id="recommendation"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SIGNATURE ================= -->
+
+    <section id="signature">
+
+        <div class="section-title">
+
+            <span>Chef's Selection</span>
+
+            <h2>Signature Dishes</h2>
+
+            <p>
+                Some of our most loved dishes,
+                specially recommended by our kitchen.
+            </p>
+
+        </div>
+
+
+        <div class="signature-grid">
+
+            <div class="signature-card">
+
+                <div class="dish-icon">🍛</div>
+
+                <h3>Maharashtrian Thali</h3>
+
+                <p>
+                    A complete celebration of traditional
+                    Maharashtrian flavours.
+                </p>
+
+            </div>
+
+
+            <div class="signature-card">
+
+                <div class="dish-icon">🍗</div>
+
+                <h3>Kolhapuri Mutton</h3>
+
+                <p>
+                    Bold, spicy and rich mutton prepared
+                    with traditional masala.
+                </p>
+
+            </div>
+
+
+            <div class="signature-card">
+
+                <div class="dish-icon">🫓</div>
+
+                <h3>Bhakri & Pithla</h3>
+
+                <p>
+                    A timeless Maharashtrian combination
+                    loved by generations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <span>Our Story</span>
+
+            <h2>About Hotel Vahinisaheb</h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div>
+
+                <div class="about-card">
+
+                    <h3>Our Tradition</h3>
+
+                    <p>
+                        Hotel Vahinisaheb is built around the love
+                        for authentic Maharashtrian food and culture.
+                    </p>
+
+                    <p>
+                        From traditional recipes to carefully selected
+                        ingredients, every dish is prepared with
+                        attention and pride.
+                    </p>
+
+                    <p>
+                        Our mission is simple — bring the real taste
+                        of Maharashtra to every guest.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="story-highlight">
+
+                <div class="story-item">
+                    <strong>15+</strong>
+                    <span>Years of Service</span>
+                </div>
+
+                <div class="story-item">
+                    <strong>50K+</strong>
+                    <span>Happy Customers</span>
+                </div>
+
+                <div class="story-item">
+                    <strong>40+</strong>
+                    <span>Signature Dishes</span>
+                </div>
+
+                <div class="story-item">
+                    <strong>4.8★</strong>
+                    <span>Customer Rating</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section id="gallery">
+
+        <div class="section-title">
+
+            <span>Visual Journey</span>
+
+            <h2>Photo Gallery</h2>
+
+            <p>
+                Explore our food, ambience and
+                Maharashtrian hospitality.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">🍛</div>
+
+            <div class="gallery-item">🏠</div>
+
+            <div class="gallery-item">🔥</div>
+
+            <div class="gallery-item">🥘</div>
+
+            <div class="gallery-item">🫓</div>
+
+            <div class="gallery-item">🌿</div>
+
+            <div class="gallery-item">🍗</div>
+
+            <div class="gallery-item">🪔</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= VIDEO ================= -->
+
+    <section id="video">
+
+        <div class="section-title">
+
+            <span>Experience Us</span>
+
+            <h2>Inside Hotel Vahinisaheb</h2>
+
+            <p>
+                Take a glimpse into our food and ambience.
+            </p>
+
+        </div>
+
+
+        <div class="video-box">
+
+            <button class="play-button">
+                ▶
+            </button>
+
+            <h3 style="margin-top:20px;">
+                Restaurant Experience
+            </h3>
+
+            <p style="color:#aaa;margin-top:8px;">
+                Food • Ambience • Tradition
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= REVIEWS ================= -->
+
+    <section id="reviews">
+
+        <div class="section-title">
+
+            <span>Guest Experiences</span>
+
+            <h2>What Our Customers Say</h2>
+
+        </div>
+
+
+        <div class="review-grid">
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The Maharashtrian thali was absolutely
+                    delicious. Everything tasted authentic."
+                </p>
+
+                <h4>— Rahul P.</h4>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "Amazing food and beautiful ambience.
+                    Definitely one of my favourite restaurants."
+                </p>
+
+                <h4>— Sneha K.</h4>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    "The bhakri and pithla reminded me of
+                    traditional homemade Maharashtrian food."
+                </p>
+
+                <h4>— Aditya S.</h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <strong>15+</strong>
+
+            <span>Years of Service</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>50K+</strong>
+
+            <span>Happy Customers</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>40+</strong>
+
+            <span>Signature Dishes</span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>4.8★</strong>
+
+            <span>Customer Rating</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <span>Visit Us</span>
+
+            <h2>Contact Hotel Vahinisaheb</h2>
+
+            <p>
+                We'd love to welcome you and your family.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <h3>📍 Restaurant Information</h3>
+
+                <div class="contact-item">
+                    📍 Shikrapur, Pune, Maharashtra
+                </div>
+
+                <div class="contact-item">
+                    📞 +91 XXXXX XXXXX
+                </div>
+
+                <div class="contact-item">
+                    🕐 11:00 AM – 11:00 PM
+                </div>
+
+                <div class="contact-item">
+                    ⭐ 4.8 / 5 Customer Rating
+                </div>
+
+                <br>
+
+                <button class="primary-btn">
+                    📍 Get Directions
                 </button>
 
-            </form>
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>💬 Send Feedback</h3>
+
+                <form class="feedback-form" onsubmit="submitFeedback(event)">
+
+                    <input type="text" placeholder="Your Name" required>
+
+                    <input type="email" placeholder="Your Email" required>
+
+                    <textarea placeholder="Your feedback or suggestion..." required></textarea>
+
+                    <button type="submit" class="primary-btn">
+                        Send Feedback
+                    </button>
+
+                </form>
+
+            </div>
 
         </div>
 
-    </div>
+        <div class="map-card">
+            <iframe src="https://www.google.com/maps?q=Shikrapur,Pune,Maharashtra&output=embed" loading="lazy"
+                title="Hotel Vahinisaheb location map"></iframe>
+        </div>
 
-    <div class="map-card">
-        <iframe src="https://www.google.com/maps?q=Shikrapur,Pune,Maharashtra&output=embed" loading="lazy" title="Hotel Vahinisaheb location map"></iframe>
-    </div>
+        <div style="text-align:center;margin-top:20px;">
+            <a class="secondary-btn"
+                href="https://www.google.com/maps/search/?api=1&query=Shikrapur%2CPune%2CMaharashtra" target="_blank"
+                rel="noopener">📍 Open in Google Maps</a>
+        </div>
 
-    <div style="text-align:center;margin-top:20px;">
-        <a class="secondary-btn" href="https://www.google.com/maps/search/?api=1&query=Shikrapur%2CPune%2CMaharashtra" target="_blank" rel="noopener">📍 Open in Google Maps</a>
-    </div>
-
-</section>
-
-
-<!-- ================= ADMIN PREVIEW ================= -->
-<section id="admin" class="admin-preview">
-    <div class="section-title">
-        <span>Owner Tools</span>
-        <h2>Admin Dashboard</h2>
-        <p>Demo preview for managing menu items, prices, gallery, feedback and restaurant information.</p>
-    </div>
-
-    <div class="admin-grid">
-        <div class="admin-card"><span>Menu Items</span><strong>24</strong></div>
-        <div class="admin-card"><span>Gallery Photos</span><strong>18</strong></div>
-        <div class="admin-card"><span>Feedback</span><strong>126</strong></div>
-        <div class="admin-card"><span>Rating</span><strong>4.8 ★</strong></div>
-    </div>
-
-    <div class="admin-actions">
-        <a href="#menu" class="primary-btn">Manage Menu</a>
-        <a href="#gallery" class="secondary-btn">Manage Gallery</a>
-        <a href="#contact" class="secondary-btn">View Feedback</a>
-    </div>
-</section>
+    </section>
 
 
-<!-- ================= FOOTER ================= -->
+    <!-- ================= ADMIN PREVIEW ================= -->
+    <section id="admin" class="admin-preview">
+        <div class="section-title">
+            <span>Owner Tools</span>
+            <h2>Admin Dashboard</h2>
+            <p>Demo preview for managing menu items, prices, gallery, feedback and restaurant information.</p>
+        </div>
 
-<footer>
+        <div class="admin-grid">
+            <div class="admin-card"><span>Menu Items</span><strong>24</strong></div>
+            <div class="admin-card"><span>Gallery Photos</span><strong>18</strong></div>
+            <div class="admin-card"><span>Feedback</span><strong>126</strong></div>
+            <div class="admin-card"><span>Rating</span><strong>4.8 ★</strong></div>
+        </div>
 
-    <div class="footer-grid">
+        <div class="admin-actions">
+            <a href="#menu" class="primary-btn">Manage Menu</a>
+            <a href="#gallery" class="secondary-btn">Manage Gallery</a>
+            <a href="#contact" class="secondary-btn">View Feedback</a>
+        </div>
+    </section>
 
-        <div>
 
-            <h3>Hotel Vahinisaheb</h3>
+    <!-- ================= FOOTER ================= -->
 
-            <p>
-                महाराष्ट्राच्या चवीचा खरा आस्वाद.
-            </p>
+    <footer>
 
-            <p>
-                Authentic Maharashtrian food,
-                prepared with tradition and love.
-            </p>
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>Hotel Vahinisaheb</h3>
+
+                <p>
+                    महाराष्ट्राच्या चवीचा खरा आस्वाद.
+                </p>
+
+                <p>
+                    Authentic Maharashtrian food,
+                    prepared with tradition and love.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Explore</h3>
+
+                <a href="#menu">Menu</a>
+
+                <a href="#meal">Build Your Meal</a>
+
+                <a href="#ai">AI Recommendation</a>
+
+                <a href="#gallery">Gallery</a>
+
+                <a href="#video">Restaurant Video</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Restaurant</h3>
+
+                <a href="#about">Our Story</a>
+
+                <a href="#reviews">Reviews</a>
+
+                <a href="#contact">Contact</a>
+
+                <a href="#admin">Admin Dashboard</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Contact</h3>
+
+                <a href="tel:+91XXXXXXXXXX">
+                    📞 Call Us
+                </a>
+
+                <a href="#">
+                    💬 WhatsApp
+                </a>
+
+                <a href="#contact">
+                    📍 Location
+                </a>
+
+            </div>
 
         </div>
 
 
-        <div>
+        <div class="copyright">
 
-            <h3>Explore</h3>
-
-            <a href="#menu">Menu</a>
-
-            <a href="#meal">Build Your Meal</a>
-
-            <a href="#ai">AI Recommendation</a>
-
-            <a href="#gallery">Gallery</a>
-
-            <a href="#video">Restaurant Video</a>
+            © 2026 Hotel Vahinisaheb.
+            All Rights Reserved.
 
         </div>
 
-
-        <div>
-
-            <h3>Restaurant</h3>
-
-            <a href="#about">Our Story</a>
-
-            <a href="#reviews">Reviews</a>
-
-            <a href="#contact">Contact</a>
-
-            <a href="#admin">Admin Dashboard</a>
-
-        </div>
+    </footer>
 
 
-        <div>
+    <!-- ================= FLOATING BUTTONS ================= -->
 
-            <h3>Quick Contact</h3>
+    <div class="floating-contact">
 
-            <a href="tel:+91XXXXXXXXXX">
-                📞 Call Us
-            </a>
+        <a href="tel:+91XXXXXXXXXX" class="float-btn" title="Call">
+            📞
+        </a>
 
-            <a href="#">
-                💬 WhatsApp
-            </a>
+        <a href="#contact" class="float-btn" title="WhatsApp">
+            💬
+        </a>
 
-            <a href="#contact">
-                📍 Location
-            </a>
-
-        </div>
+        <a href="#contact" class="float-btn" title="Location">
+            📍
+        </a>
 
     </div>
 
 
-    <div class="copyright">
+    <!-- DARK / LIGHT -->
 
-        © 2026 Hotel Vahinisaheb.
-        All Rights Reserved.
-
-    </div>
-
-</footer>
+    <button class="theme-btn" onclick="toggleTheme()" title="Toggle Theme">
+        🌓
+    </button>
 
 
-<!-- ================= FLOATING BUTTONS ================= -->
+    <!-- ================= JAVASCRIPT ================= -->
 
-<div class="floating-contact">
+    <script>
 
-    <a
-        href="tel:+91XXXXXXXXXX"
-        class="float-btn"
-        title="Call"
-    >
-        📞
-    </a>
+        /* MOBILE MENU */
 
-    <a
-        href="#contact"
-        class="float-btn"
-        title="WhatsApp"
-    >
-        💬
-    </a>
+        function toggleMenu() {
 
-    <a
-        href="#contact"
-        class="float-btn"
-        title="Location"
-    >
-        📍
-    </a>
-
-</div>
-
-
-<!-- DARK / LIGHT -->
-
-<button
-    class="theme-btn"
-    onclick="toggleTheme()"
-    title="Toggle Theme"
->
-    🌓
-</button>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-    /* MOBILE MENU */
-
-    function toggleMenu() {
-
-        document
-            .getElementById("navLinks")
-            .classList
-            .toggle("active");
-
-    }
-
-
-    /* MENU FILTER + SEARCH */
-
-    let activeCategory = "all";
-
-    function filterMenu(category, button) {
-        activeCategory = category;
-        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-        searchMenu();
-    }
-
-    function searchMenu() {
-        const cards = document.querySelectorAll(".food-card");
-        const search = document.getElementById("menuSearch").value.toLowerCase().trim();
-        const noResults = document.getElementById("noResults");
-        let visible = 0;
-
-        cards.forEach(card => {
-            const categoryMatch = activeCategory === "all" || card.dataset.category === activeCategory;
-            const textMatch = card.innerText.toLowerCase().includes(search);
-            const show = categoryMatch && textMatch;
-            card.style.display = show ? "block" : "none";
-            if (show) visible++;
-        });
-
-        noResults.style.display = visible === 0 ? "block" : "none";
-    }
-
-
-    /* BUILD YOUR MEAL */
-
-    function calculateMeal() {
-
-        const main =
-            Number(document.getElementById("mainCourse").value);
-
-        const bread =
-            Number(document.getElementById("bread").value);
-
-        const rice =
-            Number(document.getElementById("rice").value);
-
-        const drink =
-            Number(document.getElementById("drink").value);
-
-        const dessert =
-            Number(document.getElementById("dessert").value);
-
-
-        const total =
-            main + bread + rice + drink + dessert;
-
-
-        document.getElementById("mealTotal").innerText =
-            total;
-
-
-        if (total === 0) {
-
-            document.getElementById("mealSummary").innerText =
-                "Select items to build your meal.";
-
-        } else {
-
-            document.getElementById("mealSummary").innerText =
-                "Your personalised Maharashtrian meal is ready!";
+            document
+                .getElementById("navLinks")
+                .classList
+                .toggle("active");
 
         }
 
-    }
+
+        /* MENU FILTER + SEARCH */
+
+        let activeCategory = "all";
+
+        function filterMenu(category, button) {
+            activeCategory = category;
+            document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+            searchMenu();
+        }
+
+        function searchMenu() {
+            const cards = document.querySelectorAll(".food-card");
+            const search = document.getElementById("menuSearch").value.toLowerCase().trim();
+            const noResults = document.getElementById("noResults");
+            let visible = 0;
+
+            cards.forEach(card => {
+                const categoryMatch = activeCategory === "all" || card.dataset.category === activeCategory;
+                const textMatch = card.innerText.toLowerCase().includes(search);
+                const show = categoryMatch && textMatch;
+                card.style.display = show ? "block" : "none";
+                if (show) visible++;
+            });
+
+            noResults.style.display = visible === 0 ? "block" : "none";
+        }
 
 
-    /* AI RECOMMENDATION */
+        /* BUILD YOUR MEAL */
 
-    function recommendDish() {
+        function calculateMeal() {
 
-        const type =
-            document.getElementById("foodType").value;
+            const main =
+                Number(document.getElementById("mainCourse").value);
 
-        const spice =
-            document.getElementById("spice").value;
+            const bread =
+                Number(document.getElementById("bread").value);
 
-        const budget =
-            document.getElementById("budget").value;
+            const rice =
+                Number(document.getElementById("rice").value);
+
+            const drink =
+                Number(document.getElementById("drink").value);
+
+            const dessert =
+                Number(document.getElementById("dessert").value);
 
 
-        const result =
-            document.getElementById("recommendation");
+            const total =
+                main + bread + rice + drink + dessert;
 
 
-        if (!type || !spice || !budget) {
+            document.getElementById("mealTotal").innerText =
+                total;
+
+
+            if (total === 0) {
+
+                document.getElementById("mealSummary").innerText =
+                    "Select items to build your meal.";
+
+            } else {
+
+                document.getElementById("mealSummary").innerText =
+                    "Your personalised Maharashtrian meal is ready!";
+
+            }
+
+        }
+
+
+        /* AI RECOMMENDATION */
+
+        function recommendDish() {
+
+            const type =
+                document.getElementById("foodType").value;
+
+            const spice =
+                document.getElementById("spice").value;
+
+            const budget =
+                document.getElementById("budget").value;
+
+
+            const result =
+                document.getElementById("recommendation");
+
+
+            if (!type || !spice || !budget) {
+
+                result.style.display = "block";
+
+                result.innerHTML =
+                    "⚠️ Please answer all three questions first.";
+
+                return;
+
+            }
+
+
+            let dish =
+                "Maharashtrian Thali";
+
+
+            if (
+                type === "veg" &&
+                budget === "low"
+            ) {
+
+                dish = "Bhakri & Pithla";
+
+            }
+
+
+            else if (
+                type === "veg" &&
+                spice === "mild"
+            ) {
+
+                dish = "Maharashtrian Veg Thali";
+
+            }
+
+
+            else if (
+                type === "nonveg" &&
+                spice === "spicy"
+            ) {
+
+                dish = "Kolhapuri Mutton";
+
+            }
+
+
+            else if (
+                type === "nonveg"
+            ) {
+
+                dish = "Chicken Masala";
+
+            }
+
 
             result.style.display = "block";
 
+
             result.innerHTML =
-                "⚠️ Please answer all three questions first.";
-
-            return;
-
-        }
-
-
-        let dish =
-            "Maharashtrian Thali";
-
-
-        if (
-            type === "veg" &&
-            budget === "low"
-        ) {
-
-            dish = "Bhakri & Pithla";
+                "✨ Our recommendation for you is <strong>" +
+                dish +
+                "</strong>!";
 
         }
 
 
-        else if (
-            type === "veg" &&
-            spice === "mild"
-        ) {
+        /* FEEDBACK */
 
-            dish = "Maharashtrian Veg Thali";
+        function submitFeedback(event) {
 
-        }
+            event.preventDefault();
 
 
-        else if (
-            type === "nonveg" &&
-            spice === "spicy"
-        ) {
+            alert(
+                "Thank you for your valuable feedback! ❤️"
+            );
 
-            dish = "Kolhapuri Mutton";
+
+            event.target.reset();
 
         }
 
 
-        else if (
-            type === "nonveg"
-        ) {
+        /* DARK LIGHT */
 
-            dish = "Chicken Masala";
+        function toggleTheme() {
+
+            document.body.classList.toggle("light-mode");
 
         }
 
 
-        result.style.display = "block";
-
-
-        result.innerHTML =
-            "✨ Our recommendation for you is <strong>" +
-            dish +
-            "</strong>!";
-
-    }
-
-
-    /* FEEDBACK */
-
-    function submitFeedback(event) {
-
-        event.preventDefault();
-
-
-        alert(
-            "Thank you for your valuable feedback! ❤️"
-        );
-
-
-        event.target.reset();
-
-    }
-
-
-    /* DARK LIGHT */
-
-    function toggleTheme() {
-
-        document.body.classList.toggle("light-mode");
-
-    }
-
-
-</script>
+    </script>
 
 
 </body>
+
 </html>
