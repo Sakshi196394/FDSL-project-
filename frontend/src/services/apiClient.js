@@ -49,4 +49,6 @@ export async function request(endpoint, options = {}) {
   return responseData;
 }
 
+export const apiClient = { request };
+
 export { API_BASE_URL };

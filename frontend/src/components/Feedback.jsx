@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { feedbackService } from '../services/feedbackService';
 
 export default function Feedback() {
   const [formData, setFormData] = useState({
@@ -7,18 +8,26 @@ export default function Feedback() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
-    // Frontend UI state for Phase 1 (no backend connection yet)
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setSubmitting(true);
+    setError('');
 
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    try {
+      await feedbackService.submitFeedback(formData);
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (submitError) {
+      setError(submitError.message || 'Could not send feedback. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -30,6 +39,7 @@ export default function Feedback() {
           Thank you for your valuable feedback! ❤️
         </div>
       )}
+      {error && <div className="form-alert" role="alert">{error}</div>}
 
       <form className="feedback-form" onSubmit={handleSubmit}>
         <input
@@ -61,8 +71,8 @@ export default function Feedback() {
           required
         ></textarea>
 
-        <button type="submit" className="primary-btn">
-          Send Feedback
+        <button type="submit" className="primary-btn" disabled={submitting}>
+          {submitting ? 'Sending...' : 'Send Feedback'}
         </button>
       </form>
     </div>

@@ -1,7 +1,33 @@
-import React from 'react';
-import { customerReviews } from '../services/mockData';
+import React, { useEffect, useState } from 'react';
+import { reviewService } from '../services/reviewService';
+import { customerReviews as fallbackReviews } from '../services/mockData';
 
 export default function Reviews() {
+  const [customerReviews, setCustomerReviews] = useState(fallbackReviews);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    reviewService.getActiveReviews()
+      .then((data) => {
+        if (isMounted && Array.isArray(data) && data.length > 0) {
+          setCustomerReviews(data.map((review) => ({
+            id: review.id,
+            author: review.customerName || review.author || 'Customer',
+            rating: review.rating || 0,
+            text: review.reviewText || review.text || ''
+          })));
+        }
+      })
+      .catch((error) => {
+        console.warn('Could not load reviews from backend; using fallback data:', error.message);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <section id="reviews">
       <div className="section-title">

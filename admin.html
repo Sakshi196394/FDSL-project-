@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | Hotel Vahinisaheb</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(212, 175, 55, 0.18),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at bottom right,
+                    rgba(170, 100, 20, 0.18),
+                    transparent 35%
+                ),
+                #0b0805;
+
+            color: white;
+            overflow: hidden;
+        }
+
+
+        /* Decorative circles */
+
+        body::before {
+            content: "";
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            top: -250px;
+            left: -200px;
+
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+
+            width: 600px;
+            height: 600px;
+
+            right: -300px;
+            bottom: -350px;
+
+            border-radius: 50%;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+
+        /* Main Card */
+
+        .login-container {
+
+            width: 950px;
+            max-width: 92%;
+
+            min-height: 560px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            background: rgba(25, 17, 9, 0.96);
+
+            border: 1px solid rgba(212, 175, 55, 0.4);
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.7),
+                0 0 40px rgba(212, 175, 55, 0.08);
+
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* LEFT SIDE */
+
+        .brand-section {
+
+            padding: 50px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(35, 22, 8, 0.85),
+                    rgba(10, 7, 4, 0.96)
+                );
+        }
+
+
+        .restaurant-icon {
+
+            width: 100px;
+            height: 100px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            border: 2px solid #d4af37;
+
+            font-size: 45px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 0 30px rgba(212, 175, 55, 0.15);
+        }
+
+
+        .brand-section h1 {
+
+            font-family: Georgia, serif;
+
+            font-size: 34px;
+
+            color: #d4af37;
+
+            margin-bottom: 8px;
+        }
+
+
+        .marathi-name {
+
+            color: #f0d98b;
+
+            font-size: 21px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .line {
+
+            width: 90px;
+            height: 2px;
+
+            background: #d4af37;
+
+            margin-bottom: 22px;
+        }
+
+
+        .description {
+
+            max-width: 350px;
+
+            color: #aaa196;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .portal-name {
+
+            color: #776f65;
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* RIGHT SIDE */
+
+        .login-section {
+
+            padding: 60px 55px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background: #15100b;
+        }
+
+
+        .login-section h2 {
+
+            font-size: 29px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .subtitle {
+
+            color: #958c80;
+
+            font-size: 14px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* INPUT */
+
+        .input-group {
+
+            margin-bottom: 22px;
+        }
+
+
+        .input-group label {
+
+            display: block;
+
+            color: #d8d0c4;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 9px;
+        }
+
+
+        .input-box {
+
+            position: relative;
+        }
+
+
+        .input-box span {
+
+            position: absolute;
+
+            left: 15px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            font-size: 17px;
+
+            color: #b18d35;
+        }
+
+
+        input {
+
+            width: 100%;
+
+            padding: 14px 45px;
+
+            border-radius: 10px;
+
+            border: 1px solid #3d3224;
+
+            background: #0c0906;
+
+            color: white;
+
+            font-size: 14px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        input::placeholder {
+
+            color: #625c54;
+        }
+
+
+        input:focus {
+
+            border-color: #d4af37;
+
+            box-shadow:
+                0 0 0 3px rgba(212, 175, 55, 0.08);
+        }
+
+
+        /* PASSWORD EYE */
+
+        .show-password {
+
+            position: absolute;
+
+            right: 14px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            border: none;
+
+            background: none;
+
+            color: #756d62;
+
+            font-size: 17px;
+
+            cursor: pointer;
+        }
+
+
+        .show-password:hover {
+
+            color: #d4af37;
+        }
+
+
+        /* LOGIN BUTTON */
+
+        .login-btn {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d4af37,
+                    #b88920
+                );
+
+            color: #171006;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 5px;
+
+            transition: 0.3s;
+        }
+
+
+        .login-btn:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 10px 25px rgba(212, 175, 55, 0.2);
+        }
+
+
+        /* ERROR */
+
+        .error-message {
+
+            display: none;
+
+            background: rgba(150, 30, 30, 0.18);
+
+            border: 1px solid rgba(255, 100, 100, 0.35);
+
+            color: #ffb3b3;
+
+            padding: 11px;
+
+            border-radius: 8px;
+
+            margin-bottom: 20px;
+
+            font-size: 13px;
+
+            text-align: center;
+        }
+
+
+        /* SUCCESS */
+
+        .success-message {
+
+            display: none;
+
+            background: rgba(30, 130, 70, 0.15);
+
+            border: 1px solid rgba(80, 200, 120, 0.3);
+
+            color: #9ee5b5;
+
+            padding: 11px;
+
+            border-radius: 8px;
+
+            margin-bottom: 20px;
+
+            font-size: 13px;
+
+            text-align: center;
+        }
+
+
+        /* BACK BUTTON */
+
+        .back-link {
+
+            text-align: center;
+
+            margin-top: 24px;
+        }
+
+
+        .back-link a {
+
+            color: #9c9386;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+
+        .back-link a:hover {
+
+            color: #d4af37;
+        }
+
+
+        /* SECURITY */
+
+        .security {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+            color: #5e574e;
+
+            font-size: 11px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            .login-container {
+
+                grid-template-columns: 1fr;
+
+                max-width: 430px;
+
+                min-height: auto;
+            }
+
+
+            .brand-section {
+
+                padding: 35px 25px;
+            }
+
+
+            .restaurant-icon {
+
+                width: 75px;
+                height: 75px;
+
+                font-size: 32px;
+
+                margin-bottom: 18px;
+            }
+
+
+            .brand-section h1 {
+
+                font-size: 27px;
+            }
+
+
+            .marathi-name {
+
+                font-size: 18px;
+            }
+
+
+            .description {
+
+                display: none;
+            }
+
+
+            .line {
+
+                margin-bottom: 15px;
+            }
+
+
+            .login-section {
+
+                padding: 40px 28px;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            .brand-section {
+
+                padding: 30px 20px;
+            }
+
+            .login-section {
+
+                padding: 35px 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="login-container">
+
+
+    <!-- ================= LEFT SIDE ================= -->
+
+    <div class="brand-section">
+
+        <div class="restaurant-icon">
+            🍽️
+        </div>
+
+
+        <h1>
+            Hotel Vahinisaheb
+        </h1>
+
+
+        <div class="marathi-name">
+            ॥ हॉटेल वहिनीसाहेब ॥
+        </div>
+
+
+        <div class="line"></div>
+
+
+        <p class="description">
+
+            Welcome to the restaurant management portal.
+            Manage your dishes, prices and menu from one
+            convenient place.
+
+        </p>
+
+
+        <div class="portal-name">
+            Owner Management Portal
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= RIGHT SIDE ================= -->
+
+    <div class="login-section">
+
+
+        <h2>
+            Owner Login
+        </h2>
+
+
+        <p class="subtitle">
+            Sign in to manage your restaurant
+        </p>
+
+
+        <div
+            class="error-message"
+            id="errorMessage"
+        >
+            ⚠️ Invalid username or password.
+        </div>
+
+
+        <div
+            class="success-message"
+            id="successMessage"
+        >
+            ✓ Login successful! Redirecting...
+        </div>
+
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="loginForm">
+
+
+            <!-- USERNAME -->
+
+            <div class="input-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+
+                <div class="input-box">
+
+                    <span>
+                        👤
+                    </span>
+
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+
+                <div class="input-box">
+
+                    <span>
+                        🔒
+                    </span>
+
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        onclick="togglePassword()"
+                        id="eyeButton"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                class="login-btn"
+            >
+                🔐 &nbsp; Login to Admin Panel
+            </button>
+
+
+        </form>
+
+
+
+        <!-- BACK -->
+
+        <div class="back-link">
+
+            <a href="../index.html">
+                ← Back to Hotel Website
+            </a>
+
+        </div>
+
+
+        <!-- SECURITY -->
+
+        <div class="security">
+            🔒 Secure Owner Access
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+/* ============================
+   PASSWORD SHOW / HIDE
+============================ */
+
+function togglePassword() {
+
+    const password =
+        document.getElementById("password");
+
+    const eyeButton =
+        document.getElementById("eyeButton");
+
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+        eyeButton.textContent = "🙈";
+
+    } else {
+
+        password.type = "password";
+
+        eyeButton.textContent = "👁️";
+
+    }
+
+}
+
+
+
+/* ============================
+   LOGIN
+============================ */
+
+document
+    .getElementById("loginForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const username =
+            document.getElementById("username").value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
+
+        const error =
+            document.getElementById("errorMessage");
+
+        const success =
+            document.getElementById("successMessage");
+
+
+        error.style.display = "none";
+        success.style.display = "none";
+
+
+        /*
+         * DEMO LOGIN
+         *
+         * Username: owner
+         * Password: 12345
+         */
+
+        if (
+            username === "owner" &&
+            password === "12345"
+        ) {
+
+            success.style.display = "block";
+
+
+            /*
+             * Save login status
+             * for demo purposes
+             */
+
+            sessionStorage.setItem(
+                "adminLoggedIn",
+                "true"
+            );
+
+
+            /*
+             * Redirect to dashboard
+             */
+
+            setTimeout(function() {
+
+                window.location.href =
+                    "dashboard.html";
+
+            }, 1000);
+
+
+        } else {
+
+            error.style.display = "block";
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
